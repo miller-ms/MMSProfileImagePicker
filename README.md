@@ -5,11 +5,76 @@
 [![License](https://img.shields.io/cocoapods/l/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![Platform](https://img.shields.io/cocoapods/p/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 
-## Usage
+This class provides the capabilities for selecting an image from the photo library or camera, or submitting one for editing in a circular mask.  The selected and edited image would typically be used for a profile displayed in circle. With this class an application can provide identical profile selection features found in the contacts app. 
+
+
+<p align="center">
+<img src="ProfilePickerExample.png" alt="Example">
+</p>
+
+
+## Basic Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+Import the class header.
+
+```objc
+#import "MMSProfileImagePicker.h"
+```
+
+Create a view controller for image selection and editing.  The application's view controller implements the MMSProfileImagePickerDelegate interface.  The interface's method is where profile picker passes the selected and edit image. Before calling one of the profile picker's methods, the application sets its delegate property.
+
+```objc
+
+- (IBAction)pickFromCamera {
+
+    profilePicker = [[MMSProfileImagePicker alloc] init];
+
+    profilePicker.delegate = self;
+
+    [profilePicker presentCamera:self];
+
+}
+
+```
+
+There are three public methods for selecting and editing a profile image.  For editing an existing image call...
+
+```objc
+-(void)presentEditScreen:(UIViewController* _Nonnull)vc withImage:(UIImage* _Nonnull)image;
+```
+
+For editing an image selected from the photo library call...
+```objc
+-(void)selectFromPhotoLibrary:(UIViewController* _Nonnull)vc;
+```
+
+For editing an image selected from the camera call...
+
+```objc
+-(void)selectFromCamera:(UIViewController* _Nonnull)vc;
+```
+To receive the selected and edited image implement the delegate method...
+
+```objc
+
+-(void)mmsImagePickerController:(MMSProfileImagePicker* _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString*, id>*_Nonnull)info;
+
+```
+The dictionary parameter supports all the editing information keys defined in [editing information keys found in the iOS developer documentation](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerControllerDelegate_Protocol/#//apple_ref/doc/constant_group/Editing_Information_Keys).
+
+If the user cancels the selection, the application receives notificaton on the delegate method...
+
+```objc
+
+-(void)mmsImagePickerControllerDidCancel:(MMSProfileImagePicker * _Nonnull)picker;
+
+```
+
 ## Requirements
+
+MMSProfileImagePicker requires iOS 7.2 or later.
 
 ## Installation
 
@@ -26,4 +91,4 @@ William Miller, support@millermobilesoft.com
 
 ## License
 
-MMSProfileImagePicker is available under the MIT license. See the LICENSE file for more info.
+This project is is available under the MIT license. See the LICENSE file for more info. Add attibution by linking to the [project page](https://github.com/miller-ms/MMSProfileImagePicker) is appreciated.

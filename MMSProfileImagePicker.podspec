@@ -8,25 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = "MMSProfileImagePicker"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of MMSProfileImagePicker."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.version          = "1.0.0"
+  s.summary          = "A profile image selection view controller supporting image selection and editing behavior like in the contacts app."
   s.description      = <<-DESC
+    This class supports the feature for selecting an image from the photo library or camera for use as a profile image. Before final selection, it presents an edit screen with a circle overalay to resize and position the image for cropping in a square whose side is the length of the circle's diameter.  An image can be submitted to the class for editing only.  With this class you can emulate the features of the contact app's profile image selection.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/MMSProfileImagePicker"
+  s.homepage         = "https://github.com/miller-ms/MMSProfileImagePicker"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "William Miller" => "support@millermobilesoft.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/MMSProfileImagePicker.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/miller-ms/MMSProfileImagePicker.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '7.2'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -34,7 +29,7 @@ Pod::Spec.new do |s|
     'MMSProfileImagePicker' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'ImageIO'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -1,0 +1,6 @@
+framework module MMSProfileImagePicker {
+  umbrella header "MMSProfileImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.0.7):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+    - FBSnapshotTestCase/Core
+  - MMSProfileImagePicker (1.0.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - MMSProfileImagePicker (from `../`)
+
+EXTERNAL SOURCES:
+  MMSProfileImagePicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  MMSProfileImagePicker: cc6c97c0534c627ce79facb9a3965e6aa70ca202
+
+COCOAPODS: 0.39.0
