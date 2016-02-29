@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![Platform](https://img.shields.io/cocoapods/p/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 
-This class provides the capabilities for selecting an image from the photo library or camera, or submitting one for editing in a circular mask.  The selected and edited image would typically be used for a profile displayed in circle. With this class an application can provide identical profile selection features found in the contacts app. 
+This class provides the capabilities for selecting an image from the photo library or camera, or submitting one for editing in a circular mask.  The selected and edited image would typically be used for a profile displayed in a circle. With this class an application can provide identical profile selection features found in the contacts app. 
 
 
 <p align="center">
@@ -23,7 +23,7 @@ Import the class header.
 #import "MMSProfileImagePicker.h"
 ```
 
-Create a view controller for image selection and editing.  The application's view controller implements the MMSProfileImagePickerDelegate interface.  The interface's method is where profile picker passes the selected and edit image. Before calling one of the profile picker's methods, the application sets its delegate property.
+Create a the profile picker object.  The application's view controller implements the MMSProfileImagePickerDelegate interface.  The interface's method is where profile picker passes the selected and edited image. Before calling one of the profile picker's methods, the application sets its delegate property.
 
 ```objc
 
@@ -33,7 +33,7 @@ Create a view controller for image selection and editing.  The application's vie
 
     profilePicker.delegate = self;
 
-    [profilePicker presentCamera:self];
+    [profilePicker selectFromCamera:self];
 
 }
 
