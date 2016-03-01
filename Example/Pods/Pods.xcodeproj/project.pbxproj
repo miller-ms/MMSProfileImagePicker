@@ -1001,7 +1001,7 @@
 				4BB19C6B921F5883DAD44B07F252C4F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0EDC9486793060341F389ED396820195 /* Build configuration list for PBXNativeTarget "FBSnapshotTestCase" */ = {
 			isa = XCConfigurationList;
@@ -1010,7 +1010,7 @@
 				945AEEB1316FF09FB0FF1CC2812E920D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
@@ -1019,7 +1019,7 @@
 				FB45FFD90572718D82AB9092B750F0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5D0E43A9C693955AE17DB6EF2B7E5E83 /* Build configuration list for PBXNativeTarget "MMSProfileImagePicker" */ = {
 			isa = XCConfigurationList;
@@ -1028,7 +1028,7 @@
 				0198ABBC17357F9C25FDDD9751C13B3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		6E9BC122DFC726489E1459F886A62FC7 /* Build configuration list for PBXNativeTarget "Pods-MMSProfileImagePicker_Example" */ = {
 			isa = XCConfigurationList;
@@ -1037,7 +1037,7 @@
 				A8A7CC3A2A96E5660320256EDCDA22E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C191352E2CA56A887E3E5F3C50F74DC9 /* Build configuration list for PBXNativeTarget "MMSProfileImagePicker-MMSProfileImagePicker" */ = {
 			isa = XCConfigurationList;
@@ -1046,7 +1046,7 @@
 				CBB3AE3042A1C37BDB554497E45ACF3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
