@@ -17,4 +17,4 @@ before_install:
 
 script:
 - pod lib lint --quick
-- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker-Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=8.2' | xcpretty -f 'xcpretty-travis-formatter' -c;
+- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker-Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.2' | xcpretty;
