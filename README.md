@@ -1,6 +1,6 @@
 # MMSProfileImagePicker
 
-[![CI Status](http://img.shields.io/travis/William Miller/MMSProfileImagePicker.svg?style=flat)](https://travis-ci.org/William Miller/MMSProfileImagePicker)
+[![CI Status](http://img.shields.io/travis/miller-ms/MMSProfileImagePicker.svg?style=flat)](https://travis-ci.org/miller-ms/MMSProfileImagePicker)
 [![Version](https://img.shields.io/cocoapods/v/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![License](https://img.shields.io/cocoapods/l/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![Platform](https://img.shields.io/cocoapods/p/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
