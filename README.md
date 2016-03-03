@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![License](https://img.shields.io/cocoapods/l/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
 [![Platform](https://img.shields.io/cocoapods/p/MMSProfileImagePicker.svg?style=flat)](http://cocoapods.org/pods/MMSProfileImagePicker)
+[![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=miller-ms/mmsprofileimagepicker)](http://clayallsopp.github.io/readme-score?url=miller-ms/mmsprofileimagepicker)
 
 This class provides the capabilities for selecting an image from the photo library or camera, or submitting one for editing in a circular mask.  The selected and edited image would typically be used for a profile displayed in a circle. With this class an application can provide identical profile selection features found in the contacts app. 
 
@@ -88,6 +89,12 @@ pod "MMSProfileImagePicker"
 ## Author
 
 William Miller, support@millermobilesoft.com
+
+## Version History
+
+1.0.1 - corrected build problem with travis-ci
+
+1.0.0 - inaugural release to cocoapods
 
 ## License
 
