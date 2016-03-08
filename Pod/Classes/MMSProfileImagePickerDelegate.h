@@ -1,5 +1,5 @@
 //
-//  MMSImagePicerDelegate.h
+//  MMSProfileImagePickerDelegate.h
 //
 //  Copyright © 2016 William Miller, http://millermobilesoft.com/
 //  email:<support@millermobilesoft.com>

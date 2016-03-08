@@ -1,5 +1,5 @@
 //
-//  UITMoveScrollViewController.m
+//  MMSProfileImagePickerDelegate
 //
 //  Copyright © 2016 William Miller, http://millermobilesoft.com/
 //  email:<support@millermobilesoft.com>
@@ -173,10 +173,10 @@ const CGFloat kOverlayInset = 10;
     
 }
 /**
- *  <#Description#>
+ *  Based on whether displaying the camera, photo library selection, or just editing an image, it dismisses the controllers displayed to support that in the proper sequence.
  *
- *  @param flag       <#flag description#>
- *  @param completion <#completion description#>
+ *  @param flag       Pass yes to animate the transition.
+ *  @param completion The block to execute after the controller is dismissed.
  */
 -(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
     

@@ -1,6 +1,5 @@
 //
-//  MMSDelegateController.m
-//  MMSImagePickerController
+//  MMSProfilePickerPrivateDelegateController.m
 //
 //
 //  Copyright © 2016 William Miller, http://millermobilesoft.com/
