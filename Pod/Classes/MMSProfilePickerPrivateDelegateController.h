@@ -27,10 +27,15 @@
 
 #import "MMSProfileImagePickerDelegate.h"
 
-//@class MMSProfilePickerPrivateDelegateController
-
 @interface MMSProfilePickerPrivateDelegateController : UINavigationController <UINavigationControllerDelegate>
 
+/**
+ *  Initialize with reference to the profile picker.  When navigation controller delegates are invoked, this class passes the call onto the profile picker.
+ *
+ *  @param presentingPicker The profile picker instance creating the delegate.
+ *
+ *  @return an instance to the controller
+ */
 -(instancetype) initWithPicker:(MMSProfileImagePicker*)presentingPicker;
 
 

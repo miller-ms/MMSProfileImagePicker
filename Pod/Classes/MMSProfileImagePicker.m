@@ -40,38 +40,89 @@ const CGFloat kOverlayInset = 10;
     
 @private
     
-    UIView* overlayView;  // displays the circle mask
+    /**
+     *  displays the circle mask
+     */
+    UIView* overlayView;
     
-    UIImageView* imageView;  // holds the image to be moved and cropped
+    /**
+     *  holds the image to be moved and cropped
+     */
+    UIImageView* imageView;
     
-    UIScrollView* scrollView;  // Holds the image for positioning and reasizing
+    /**
+     *  Holds the image for positioning and reasizing
+     */
+    UIScrollView* scrollView;
     
-    UIImage*  imageToEdit;  // Image passed to the edit screen.
+    /**
+     *  Image passed to the edit screen.
+     */
+    UIImage*  imageToEdit;
     
-    UILabel*  titleLabel;  // @"Move and Scale";
+    /**
+     *  @"Move and Scale";
+     */
+    UILabel*  titleLabel;
     
-    UIButton* chooseButton;  // selects the image
+    /**
+     *  selects the image
+     */
+    UIButton* chooseButton;
     
-    UIButton* cancelButton;  // cancels cropping
+    /**
+     *  cancels cropping
+     */
+    UIButton* cancelButton;
     
-    CGRect cropRect;  // Rectangular area identifying the crop region
+    /**
+     *  Rectangular area identifying the crop region
+     */
+    CGRect cropRect;
     
-    UIImagePickerController* imagePicker;  // This class proxy's for the UIImagePickerController
+    /**
+     *  This class proxy's for the UIImagePickerController
+     */
+    UIImagePickerController* imagePicker;
     
-    AVCaptureSession* session;  // Session for captureing a still image
+    /**
+     *  Session for captureing a still image
+     */
+    AVCaptureSession* session;
     
-    AVCaptureStillImageOutput* stillImageOutput;  //  holds the still image from the camera
+    /**
+     *  holds the still image from the camera
+     */
+    AVCaptureStillImageOutput* stillImageOutput;
     
-    BOOL isDisplayFromPicker;  // Is displaying the photo picker
+    /**
+     *  Is displaying the photo picker
+     */
+    BOOL isDisplayFromPicker;
 
-    BOOL isPresentingCamera;  // to determine if the crop screen is displayed from the camera path
+    /**
+     *  to determine if the crop screen is displayed from the camera path
+     */
+    BOOL isPresentingCamera;
     
-    BOOL isSnapPhotoTargetAdded;  // true when the snap photo target has been replaced in the UIImagePickerController
+    /**
+     *  true when the snap photo target has been replaced in the UIImagePickerController
+     */
+    BOOL isSnapPhotoTargetAdded;
     
-    BOOL isPreparingStill;  // Set to true when camera has been initialized, so it only happens once.
+    /**
+     *  Set to true when camera has been initialized, so it only happens once.
+     */
+    BOOL isPreparingStill;
     
-    UIViewController* presentingVC;  // The view controller that presented the MMSImagePickerController
+    /**
+     *  The view controller that presented the MMSImagePickerController
+     */
+    UIViewController* presentingVC;
     
+    /**
+     *  A reference to the proxy delegate
+     */
     MMSProfilePickerPrivateDelegateController* proxyVC;
         
     
@@ -121,7 +172,12 @@ const CGFloat kOverlayInset = 10;
     [self positionImageView];
     
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @param flag       <#flag description#>
+ *  @param completion <#completion description#>
+ */
 -(void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
     
     
@@ -200,9 +256,9 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* createSubViews: creates and positions the subviews to present functionality for moving and scaling an image having a circle overlay by default. It places the title, "Move and Scale" centered at the top of the screen.  A cancel button at the lower left corner and a choose button at the lower right corner.
+/**
+ *  createSubViews: creates and positions the subviews to present functionality for moving and scaling an image having a circle overlay by default. It places the title, "Move and Scale" centered at the top of the screen.  A cancel button at the lower left corner and a choose button at the lower right corner.
  */
-
 -(void) createSubViews {
     
     /* create the scrollView to fit within the physical screen size
@@ -263,7 +319,12 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* addTitleLabel: adds the "Move and Scale" title centered at the top of the parent view.
+/** Add Title Label
+ *  adds the "Move and Scale" title centered at the top of the parent view.
+ *
+ *  @param parentView the view to add the title to.
+ *
+ *  @return the label view added
  */
 -(UILabel*)addTitleLabel:(UIView*)parentView {
     
@@ -293,7 +354,13 @@ const CGFloat kOverlayInset = 10;
     return label;
 }
 
-/* addChooseButton: adds the button with the title "Choose" position at the bottom right corner of the parent view.
+/** Add Choose Button
+ *  adds the button with the title "Choose" position at the bottom right corner of the parent view.
+ *
+ *  @param parentView The view to add the button to
+ *  @param action     The method to call on the UIControlEventTouUpInside event
+ *
+ *  @return the button view added
  */
 -(UIButton*)addChooseButton:(UIView*)parentView action:(SEL _Nonnull)action {
     
@@ -338,10 +405,14 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-
-/* addCancelButton: adds the button with the title "Cancel" position at the bottom left corner of the parent view.
+/** Add Cancel Button
+ *  adds the button with the title "Cancel" position at the bottom left corner of the parent view.
+ *
+ *  @param parentView The view to add the button to
+ *  @param action     The method to call on the UIControlEventTouUpInside event
+ *
+ *  @return the button view added
  */
-
 -(UIButton*)addCancelButton:(UIView*)parentView action:(SEL _Nonnull)action {
     
     /* define constants to create and position the choose button on the bottom left corner of the parent view.
@@ -385,13 +456,26 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* viewForZoomingScrollView: the imageView is the view for zooming the scroll view.
+
+/** View For Zooming in ScrollView
+ *  the imageView is the view for zooming the scroll view.
+ *
+ *  @param scrollView the scroll view with the request
+ *
+ *  @return the image view
  */
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     
     return imageView;
 }
 
+/**  Scroll View Did End Zooming
+ *  Adjusts the scroll view's insets as the view enlarges.  As the scale enlarges the image, the insets shrink so that the edges do not move beyond the corresponding edge of the image mask when the it is scrolled.
+ *
+ *  @param sv    the scroll view
+ *  @param view  the view that was zoomed
+ *  @param scale the scale factor
+ */
 -(void)scrollViewDidEndZooming:(UIScrollView *)sv withView:(UIView *)view atScale:(CGFloat)scale {
     
     UIEdgeInsets insets;
@@ -401,9 +485,17 @@ const CGFloat kOverlayInset = 10;
     sv.contentInset = insets;
 }
 
-/* centerRect: retuns a rectangle's origin to position the inside rectangle centered within the enclosing one
+/* centerRect:
  */
 
+/** Center Rect
+ *  retuns a rectangle's origin to position the inside rectangle centered within the enclosing one
+ *
+ *  @param insideRect  the inside rectangle
+ *  @param outsideRect the rectangle enclosing the inside rectangle.
+ *
+ *  @return inside rectangle's origin to position it centered.
+ */
 -(CGPoint)centerRect:(CGRect)insideRect inside:(CGRect)outsideRect {
     
     CGPoint upperLeft = CGPointZero;
@@ -437,9 +529,14 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* centerSquareRectInRect: creates a square with the shortest input dimensions less the insets, and positions the x and y coordinates such that it's center is the same center as would be the rectangle created from the input size and its origin at (0,0).
+/** Center Square Rectangle in Rectangle
+ *  creates a square with the shortest input dimensions less the insets, and positions the x and y coordinates such that it's center is the same center as would be the rectangle created from the input size and its origin at (0,0).
+ *
+ *  @param layerSize the size of the layer to create the centered rectangle in
+ *  @param inset     the rectangle's insets
+ *
+ *  @return the centered rectangle
  */
-
 -(CGRect)centerSquareRectInRect:(CGSize)layerSize withInsets:(UIEdgeInsets)inset {
     
     CGRect rect = CGRectZero;
@@ -477,7 +574,13 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* createOverlay: the overlay is the transparent view with the clear center to show how the image will appear when cropped. inBounds is the inside transparent crop region.  outBounds is the region that falls outside the inbound region and displays what's beneath it with dark transparency.
+/** Create Overlay
+ *  the overlay is the transparent view with the clear center to show how the image will appear when cropped. inBounds is the inside transparent crop region.  outBounds is the region that falls outside the inbound region and displays what's beneath it with dark transparency.
+ *
+ *  @param inBounds  the inside transparent crop rectangle
+ *  @param outBounds the area outside inbounds.  In this solution it's always the screen dimensions.
+ *
+ *  @return the shape layer with a transparent circle and a darker region outside
  */
 -(CAShapeLayer*)createOverlay:(CGRect)inBounds bounds:(CGRect)outBounds{
     
@@ -509,7 +612,14 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* insetsForImage:withFrame:inView: the goal of this routine is to calculate the insets so that the top and bottom of the image can align with the top and bottom of the frame when it is scrolled within the view.
+/** insets for image with frame in view
+ *  the goal of this routine is to calculate the insets so that the top and bottom of the image can align with the top and bottom of the frame when it is scrolled within the view.
+ *
+ *  @param imageSize height and width of the image
+ *  @param frameSize size of the region where the image will be cropped to
+ *  @param viewSize  size of the view where the image will display
+ *
+ *  @return <#return value description#>
  */
 -(UIEdgeInsets)insetsForImage:(CGSize)imageSize withFrame:(CGSize)frameSize inView:(CGSize)viewSize {
     
@@ -549,11 +659,13 @@ const CGFloat kOverlayInset = 10;
 }
 
 #pragma mark - UINavigationControllerDelegate
-
-
-/* navigationController:didShowViewController:animated: when the UIImagePickerController is presenting a camera to capture a still image, this routine removes the target for the button to taking the picture and adds a custom target.  This allows the class to display a customer move and scale screen for the still image.
+/** did show view controller
+ *  when the UIImagePickerController is presenting a camera to capture a still image, this routine removes the target for the button to taking the picture and adds a custom target.  This allows the class to display a customer move and scale screen for the still image.
+ *
+ *  @param navigationController the navigation controller
+ *  @param viewController       the view controller presenting
+ *  @param animated             true if animated
  */
-
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     
@@ -576,8 +688,11 @@ const CGFloat kOverlayInset = 10;
 
 #pragma mark - UIImagePickerControllerDelegate
 
-
-/* imagePickerController:didFinishPickingMediaWithInfo: this routine calls the equivalent this class's custome delegate method.
+/**  did finish picking media with info
+ *  presents the move and scale screen with the selected image.
+ *
+ *  @param picker <#picker description#>
+ *  @param info   <#info description#>
  */
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -586,13 +701,13 @@ const CGFloat kOverlayInset = 10;
     
     [self editImage:tempImage];
     
-//    [self.delegate mmsImagePickerController:self didFinishPickingMediaWithInfo:info];
-    
 }
 
-/* imagePickerControllerDidCancel: this routine calls the equivalent this class's custome delegate method.
+/** image picker controller did cancel
+ *  this routine calls the equivalent this class's custome delegate method.
+ *
+ *  @param picker the image picker controller.
  */
-
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [self.delegate mmsImagePickerControllerDidCancel:self];
@@ -602,9 +717,11 @@ const CGFloat kOverlayInset = 10;
 
 #pragma mark - action
 
-/* takePhoto: called by the UIImagePickerController when the user presses the take photo button in the camera view.
+/**
+ *  called by the UIImagePickerController when the user presses the take photo button in the camera view.
+ *
+ *  @param sender the button view tapped
  */
-
 -(IBAction)takePhoto:(UIButton*)sender {
     
     [self prepareToCaptureStillImage];
@@ -613,7 +730,10 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* choose: called when the user is finished with moving and scaling the image to select it as final.  It crops the image and sends the information to the delegate.
+/** choose
+ *  called when the user is finished with moving and scaling the image to select it as final.  It crops the image and sends the information to the delegate.
+ *
+ *  @param sender the button view tapped
  */
 -(IBAction)choose:(UIButton*)sender {
     
@@ -646,7 +766,10 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* cancel: the user has decided to snap another photo if presenting the camera, to choose another image from the album if presenting the album, or to exit the move and scale when only using it to crop an image.
+/** cancel
+ *  the user has decided to snap another photo if presenting the camera, to choose another image from the album if presenting the album, or to exit the move and scale when only using it to crop an image.
+ *
+ *  @param sender the button view tapped
  */
 -(IBAction)cancel:(UIButton*)sender {
     
@@ -665,11 +788,33 @@ const CGFloat kOverlayInset = 10;
     }
     
 }
+/* editImage: presents the move and scale view initialized with the input image.  This is only to be called from the presentCamera and presentPhotoPicker workflows after the user has captured an image or selected one.
+ */
+/**
+ *
+ *
+ *  @param image <#image description#>
+ */
+-(void)editImage:(UIImage*)image {
+    
+    imageToEdit = image;
+    
+    self.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [imagePicker setNavigationBarHidden:YES];
+    
+    [imagePicker pushViewController:self animated:NO];
+    
+}
 
 #pragma mark - Public Interface
-/* presentEditScreen: presents the move and scale window for a supplied image.  This use case is for when all that's required is to crop an image not to select one from the camera or photo album before cropping.
- */
 
+/** present edit screen
+ *  presents the move and scale window for a supplied image.  This use case is for when all that's required is to crop an image not to select one from the camera or photo album before cropping.
+ *
+ *  @param vc    view controller requesting presentation of the edit screen
+ *  @param image the image to show in the edit screen
+ */
 -(void)presentEditScreen:(UIViewController* _Nonnull)vc withImage:(UIImage* _Nonnull)image{
     
     isDisplayFromPicker = isPresentingCamera = NO;
@@ -684,21 +829,10 @@ const CGFloat kOverlayInset = 10;
 
 }
 
-/* editImage: presents the move and scale view initialized with the input image.  This is only to be called from the presentCamera and presentPhotoPicker workflows after the user has captured an image or selected one.
- */
--(void)editImage:(UIImage*)image {
-    
-    imageToEdit = image;
-    
-    self.modalPresentationStyle = UIModalPresentationFullScreen;
-    
-    [imagePicker setNavigationBarHidden:YES];
-    
-    [imagePicker pushViewController:self animated:NO];
-
-}
-
-/* selectFromPhotoLibrary: instantiates the UIImagePickerController object and configures it to present the photo library picker.
+/**
+ *  instantiates the UIImagePickerController object and configures it to present the photo library picker.
+ *
+ *  @param vc the view controller requesting presentation of the photo library selection.
  */
 -(void)selectFromPhotoLibrary:(UIViewController* _Nonnull)vc {
 
@@ -723,9 +857,11 @@ const CGFloat kOverlayInset = 10;
 
 }
 
-/* selectFromCamera: instantiates the UIImagePickerController object and configures it to present the camera.
+/**
+ *  instantiates the UIImagePickerController object and configures it to present the camera.
+ *
+ *  @param vc the view controller requesting presentation of the camera.
  */
-
 - (void)selectFromCamera:(UIViewController* _Nonnull)vc {
 
     // *** new code here
@@ -758,9 +894,9 @@ const CGFloat kOverlayInset = 10;
 
 #pragma mark - Camera setup and capture
 
-/* prepareToCaptureStillImage: creates the objects necessary to capture a still image from the camera. There's a 1 second delay before acquiring the image from the camera.  This improves the quality of the acquired image.  Some have suggested the delay is required to give the camera time to complete it's initialization.
+/** prepare to capture still image
+ *   creates the objects necessary to capture a still image from the camera. There's a 1 second delay before acquiring the image from the camera.  This improves the quality of the acquired image.  Some have suggested the delay is required to give the camera time to complete it's initialization.
  */
-
 -(void)prepareToCaptureStillImage {
     
     if (!isPreparingStill) {
@@ -794,7 +930,10 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* captureStillImage: acquires the image from the camera, transforms it into a UIImage, and presents the move and scale view for user editing and final selection.
+
+/** capture still image
+ *  acquires the image from the camera, transforms it into a UIImage, and presents the move and scale view for user editing and final selection.
+
  */
 -(void)captureStillImage {
     
@@ -850,9 +989,15 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* cameraConnection: returns a capture connection by walking through the collection of connections in the output object until it finds one of type AVMediaTypeVideo.
- */
+/* cameraConnection:  */
+/** camera connection
+ *  returns a capture connection by walking through the collection of connections in the output object until it finds one of type AVMediaTypeVideo.
 
+ *
+ *  @param imageOutput holds the list of capture connections
+ *
+ *  @return the connection
+ */
 -(AVCaptureConnection*)cameraConnection:(AVCaptureStillImageOutput*)imageOutput  {
     
     AVCaptureConnection *videoConnection = nil;
@@ -875,7 +1020,11 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* getCameraDevice: walks through the list of capture devices and returns the camera device positioned on the back of the mobile computer.
+
+/** Get camera device
+ *  walks through the list of capture devices and returns the camera device positioned on the back of the mobile computer.
+ *
+ *  @return returns the camera device on the back of the camera
  */
 // #warning update to send the front or back device depending on what the user has selected.
 -(AVCaptureDevice*)getCameraDevice {
@@ -899,7 +1048,10 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-/* captureInput: creates device input object and adds it to the session.
+/**
+ *  creates device input object and adds it to the session.
+ *
+ *  @param device The device to add the input for the session.
  */
 -(void)captureInput:(AVCaptureDevice*)device {
     

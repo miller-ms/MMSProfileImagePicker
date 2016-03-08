@@ -33,6 +33,10 @@
 
 {
 @private
+    
+    /**
+     *  Holds the reference to the profile picker so that it can call it when the navigation controller calls are made.
+     */
     MMSProfileImagePicker *mmsPicker;
         
 }
@@ -40,7 +44,13 @@
 @end
 
 @implementation MMSProfilePickerPrivateDelegateController
-
+/** init with picker
+ *  When the private delegat is created it is initialized with the profile picker instance.
+ *
+ *  @param presentingPicker The profile picker instance
+ *
+ *  @return A reference to the private delegate controller
+ */
 -(instancetype)initWithPicker:(MMSProfileImagePicker *)presentingPicker {
     
     mmsPicker = presentingPicker;
@@ -62,6 +72,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+/** did show view controller
+ *  Passes the invocation directly to the image picker.
+ *
+ *  @param navigationController The navigation controller
+ *  @param viewController       The view controller being pushed on the stack
+ *  @param animated             true if the view controller shows animated.
+ */
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
         
     [mmsPicker navigationController:navigationController didShowViewController:viewController animated:animated];

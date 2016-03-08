@@ -28,17 +28,62 @@
 
 @interface MMSProfileImagePicker : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic) UIEdgeInsets frameInsets;
+//@property (nonatomic) UIEdgeInsets frameInsets;
+
+/**
+ *  Determines how small the image can be scaled.  The default is 1 i.e. it can be made smaller than original.
+ */
 @property (nonatomic)CGFloat minimumZoomScale;
+
+/**
+ *  Determines how large the image can be scaled.  The default is 10.
+ */
 @property (nonatomic)CGFloat maxiumuZoomScale;
+
+/**
+ *  A value from 0 to 1 to control how brilliant the image shows through the area outside of the crop circle.
+ *  1 is completely opaque and 0 is completely transparent.  The default is .6.
+ */
 @property (nonatomic)float   overlayOpacity;
+
+/**
+ *  The background color of the edit screen.  The default is black.
+ */
 @property (strong, nullable)UIColor* backgroundColor;
+
+/**
+ *  The foreground color of the text on the edit screen. The default is white.
+ */
 @property (strong, nullable)UIColor* foregroundColor;
-//@property (strong, nullable)UIImage* image;
+
+/**
+ *  The delegate receives notifications when the user has selected an image or exits image selection.
+ */
 @property (nullable, nonatomic, weak)id <MMSProfileImagePickerDelegate> delegate;
 
+/** Edits an Image
+ *
+ *  Presents a screen to resize and position the passed image within a circular crop region.
+ *
+ *  @param vc    The view controller to present the edit screen from.
+ *  @param image The image to edit
+ */
 -(void)presentEditScreen:(UIViewController* _Nonnull)vc withImage:(UIImage* _Nonnull)image;
+
+/** Select image from photo library
+ *
+ *  Presents the sequnence of screens to select an image from the device's photo library.
+ *
+ *  @param vc The view controller to present the library selection screen from.
+ */
 -(void)selectFromPhotoLibrary:(UIViewController* _Nonnull)vc;
+
+/** Select image from the camera
+ *
+ *  Presents the camera for positioning a scene and acquiring the image.
+ *
+ *  @param vc The view controller to present the camera from.
+ */
 -(void)selectFromCamera:(UIViewController* _Nonnull)vc;
 
 @end

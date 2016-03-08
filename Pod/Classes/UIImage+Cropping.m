@@ -34,8 +34,6 @@
 @implementation UIImage (Cropping)
 
 
-/* scaleSize: calculates a return size by aspect scaling the fromSize to fit within the destination size while giving priority to the width or height depending on which preference will maintain both the return width and height within the destination ie the return size will return a new size where both width and height are less than or equal to the destinations.
- */
 
 +(CGSize)scaleSize:(CGSize)fromSize toSize:(CGSize)toSize {
     
@@ -105,8 +103,12 @@
     return scaleSize;
 }
 
-
-/* scaleBitmapToSize: returns an UIImage scaled to the input dimensions. Oftentimes the underlining CGImage does not match the orientation of the UIImage. This routing scales the UIImage dimensions not the CGImage's, and so it swaps the height and width of the scale size when it detects the UIImage is oriented differently.
+/** scale bitmap to size
+ *  returns an UIImage scaled to the input dimensions. Oftentimes the underlining CGImage does not match the orientation of the UIImage. This routing scales the UIImage dimensions not the CGImage's, and so it swaps the height and width of the scale size when it detects the UIImage is oriented differently.
+ *
+ *  @param scaleSize the dimensions to scale the bitmap to.
+ *
+ *  @return A reference to a uimage created from the scaled bitmap
  */
 -(UIImage*)scaleBitmapToSize:(CGSize)scaleSize
 
