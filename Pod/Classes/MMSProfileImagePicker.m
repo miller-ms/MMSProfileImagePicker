@@ -128,7 +128,7 @@ const CGFloat kOverlayInset = 10;
     
 }
 
-@synthesize minimumZoomScale = _minimumZoomScale, maxiumuZoomScale=_maxiumuZoomScale;
+@synthesize minimumZoomScale = _minimumZoomScale, maximumZoomScale=_maximumZoomScale;
 @synthesize backgroundColor=_backgroundColor;
 @synthesize foregroundColor=_foregroundColor;
 @synthesize overlayOpacity=_overlayOpacity;
@@ -139,7 +139,7 @@ const CGFloat kOverlayInset = 10;
     self = [super init];
     
     _minimumZoomScale = 1;
-    _maxiumuZoomScale = 10;
+    _maximumZoomScale = 10;
     _backgroundColor = [UIColor blackColor];
     _foregroundColor = [UIColor whiteColor];
     _overlayOpacity = 0.6;
@@ -273,7 +273,7 @@ const CGFloat kOverlayInset = 10;
     
     scrollView.minimumZoomScale = _minimumZoomScale;    // content cannot shrink
     
-    scrollView.maximumZoomScale = _maxiumuZoomScale;   // content can grow 10x original size
+    scrollView.maximumZoomScale = _maximumZoomScale;   // content can grow 10x original size
     
     self.view.backgroundColor = _backgroundColor;
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C30B3891C8F8B620070CF5C /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 2C30B3881C8F8B620070CF5C /* CHANGELOG.md */; };
 		2C96579B1C7269750051858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96579A1C7269750051858C /* Main.storyboard */; };
 		2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96582A1C72DF030051858C /* Launch Screen.storyboard */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0F4ED6F9287570C2B3637EAE /* MMSProfileImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MMSProfileImagePicker.podspec; path = ../MMSProfileImagePicker.podspec; sourceTree = "<group>"; };
 		28AE141BD12A2EF73FAA2687 /* Pods_MMSProfileImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMSProfileImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C30B3881C8F8B620070CF5C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		2C96579A1C7269750051858C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2C96582A1C72DF030051858C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2CA142ABA73685B5F38C00B6 /* Pods-MMSProfileImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSProfileImagePicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				2C30B3881C8F8B620070CF5C /* CHANGELOG.md */,
 				0F4ED6F9287570C2B3637EAE /* MMSProfileImagePicker.podspec */,
 				A2886CD5205BE2353250ABA4 /* README.md */,
 				689BD341CA189081C6C5A308 /* LICENSE */,
@@ -397,6 +400,7 @@
 				6003F59E195388D20070C39A /* MMSAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MMSViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				2C30B3891C8F8B620070CF5C /* CHANGELOG.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

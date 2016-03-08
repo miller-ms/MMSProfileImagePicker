@@ -28,8 +28,6 @@
 
 @interface MMSProfileImagePicker : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-//@property (nonatomic) UIEdgeInsets frameInsets;
-
 /**
  *  Determines how small the image can be scaled.  The default is 1 i.e. it can be made smaller than original.
  */
@@ -38,7 +36,7 @@
 /**
  *  Determines how large the image can be scaled.  The default is 10.
  */
-@property (nonatomic)CGFloat maxiumuZoomScale;
+@property (nonatomic)CGFloat maximumZoomScale;
 
 /**
  *  A value from 0 to 1 to control how brilliant the image shows through the area outside of the crop circle.

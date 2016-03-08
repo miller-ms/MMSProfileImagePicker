@@ -85,6 +85,12 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "MMSProfileImagePicker"
 ```
+## Article
+
+An article describing the implementation of the class:  [A Class for Selecting a Profile Image](http://www.codeproject.com/Articles/1080877/A-Class-for-Selecting-a-Profile-Image).
+
+A related article describing the cropping category:  [A View Class for Cropping Images](http://www.codeproject.com/Articles/1066191/A-View-Class-for-Cropping-Images).
+
 
 ## Author
 

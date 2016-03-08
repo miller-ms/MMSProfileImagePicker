@@ -31,10 +31,10 @@
 /** scale size
  *  calculates a return size by aspect scaling the fromSize to fit within the destination size while giving priority to the width or height depending on which preference will maintain both the return width and height within the destination ie the return size will return a new size where both width and height are less than or equal to the destinations.
  *
- *  @param fromSize <#fromSize description#>
- *  @param toSize   <#toSize description#>
+ *  @param fromSize Size to be transforme
+ *  @param toSize   Destination size
  *
- *  @return <#return value description#>
+ *  @return Aspect scaled size
  */
 +(CGSize)scaleSize:(CGSize)fromSize toSize:(CGSize)toSize;
 

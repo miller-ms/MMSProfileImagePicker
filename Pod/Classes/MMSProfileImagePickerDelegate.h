@@ -30,7 +30,19 @@
 
 @protocol MMSProfileImagePickerDelegate <NSObject>
 
+/**
+ *  The user canceled out of the image selection operation.
+ *
+ *  @param picker Reference to the Profile Picker
+ */
 -(void)mmsImagePickerControllerDidCancel:(MMSProfileImagePicker * _Nonnull)picker;
+
+/**
+ *  The user completed the operation of either editing, selecting from photo library, or capturing from the camera.  The dictionary uses the editing information keys used in UIImagePickerController.
+ *
+ *  @param picker Reference to profile picker that completed selection.
+ *  @param info   A dictionary containing the original image and the edited image, if an image was picked; The dictionary also contains any relevant editing information. .
+ */
 -(void)mmsImagePickerController:(MMSProfileImagePicker* _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString*, id>*_Nonnull)info;
 
 @end
