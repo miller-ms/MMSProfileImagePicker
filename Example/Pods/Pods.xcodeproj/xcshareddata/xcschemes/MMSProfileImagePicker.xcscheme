@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DD68F6CF123E1B45383F2B95'
+               BlueprintIdentifier = '3FB323ECCBCE87F2B6262DC4'
                BlueprintName = 'MMSProfileImagePicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MMSProfileImagePicker.framework'>
