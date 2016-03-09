@@ -96,12 +96,6 @@ A related article describing the cropping category:  [A View Class for Cropping 
 
 William Miller, support@millermobilesoft.com
 
-## Version History
-
-1.0.1 - corrected build problem with travis-ci
-
-1.0.0 - inaugural release to cocoapods
-
 ## License
 
 This project is is available under the MIT license. See the LICENSE file for more info. Add attibution by linking to the [project page](https://github.com/miller-ms/MMSProfileImagePicker) is appreciated.
