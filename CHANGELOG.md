@@ -9,6 +9,7 @@ Released on 2016-06-11.
 - Refreshed project files for cocoapods 1.0
 - Corrected constraint warning in example storyboard.
 - Corrected build warnings for build targets where cocoapods used ${} instead of $()
+- Removed version history from readme.md
  - Added by [William Miller](https://github.com/miller-ms).
 
 ## [1.0.5](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.0.5)
