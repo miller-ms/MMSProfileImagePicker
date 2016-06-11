@@ -9,7 +9,6 @@ podfile: Example/Podfile
 before_install:
  - rvm use system
  - sudo gem install bundler
- - sudo gem install cocoapods #  Since Travis is not always on latest version
  - sudo gem install xcpretty --no-rdoc --no-ri --no-document --quiet
  - sudo gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
  - sudo gem install cocoapods # Since Travis is not always on latest version
