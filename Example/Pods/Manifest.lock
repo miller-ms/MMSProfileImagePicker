@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.1)
   - FBSnapshotTestCase/SwiftSupport (2.1.1):
     - FBSnapshotTestCase/Core
-  - MMSProfileImagePicker (1.0.5)
+  - MMSProfileImagePicker (1.0.6)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
-  MMSProfileImagePicker: fc4d82c1a94b9e385eae3fa112f0de16abdf99d0
+  MMSProfileImagePicker: 2828496b40ada32bbcad47adac80f495d0145410
 
 PODFILE CHECKSUM: 7b0790f2cef46e6ca0917abe689ef24fa606620f
 
