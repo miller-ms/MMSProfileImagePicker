@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'MMSProfileImagePicker_Example', :exclusive => true do
+target 'MMSProfileImagePicker_Example' do
   pod 'MMSProfileImagePicker', :path => '../'
 end
 
-target 'MMSProfileImagePicker_Tests', :exclusive => true do
+target 'MMSProfileImagePicker_Tests' do
   pod 'MMSProfileImagePicker', :path => '../'
 
   pod 'FBSnapshotTestCase'

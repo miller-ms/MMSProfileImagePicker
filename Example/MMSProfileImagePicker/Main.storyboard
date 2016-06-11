@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment version="2336" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <deployment version="2352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -70,8 +70,8 @@
                                     <action selector="editImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMN-Di-AKS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-rs-YGW">
-                                <rect key="frame" x="20" y="171" width="560" height="421"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eJg-rs-YGW">
+                                <rect key="frame" x="89" y="171" width="421" height="421"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eJg-rs-YGW" secondAttribute="height" multiplier="1:1" id="4cZ-Ha-YRW"/>
                                 </constraints>
@@ -87,9 +87,9 @@
                             <constraint firstItem="eJg-rs-YGW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cVy-77-U83"/>
                             <constraint firstItem="e0Z-Ks-1nZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="ezI-GL-ucB"/>
                             <constraint firstItem="JLb-zD-uZZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="faE-ao-jMf"/>
-                            <constraint firstItem="eJg-rs-YGW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="no8-aF-j7P"/>
+                            <constraint firstItem="eJg-rs-YGW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" priority="750" id="no8-aF-j7P"/>
                             <constraint firstItem="JLb-zD-uZZ" firstAttribute="top" secondItem="e0Z-Ks-1nZ" secondAttribute="bottom" constant="8" id="yBK-nh-PFI"/>
-                            <constraint firstItem="eJg-rs-YGW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yD5-2j-bKV"/>
+                            <constraint firstItem="eJg-rs-YGW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" priority="750" id="yD5-2j-bKV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ocp-5v-4B6"/>
