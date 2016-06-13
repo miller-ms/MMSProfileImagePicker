@@ -25,7 +25,7 @@
 //
 
 @import UIKit;
-#import "MMSProfileiMagePicker.h"
+@import MMSProfileImagePicker;
 
 @interface MMSViewController : UIViewController <MMSProfileImagePickerDelegate>
 
