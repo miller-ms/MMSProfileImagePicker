@@ -15,9 +15,9 @@ before_install:
 
 script:
 - pod lib lint --quick
-- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -list | xcpretty;
-- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.3' | xcpretty;
-- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme FBSnapshotTestCase -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.3' | xcpretty;
-- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.3' | xcpretty;
-- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.3' | xcpretty;
+- set -o pipefail && xcodebuild -workspace Example/MMSProfileImagePicker.xcworkspace -list | xcpretty;
+- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker | xcpretty;
+- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme FBSnapshotTestCase | xcpretty;
+- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example | xcpretty;
+- set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests | xcpretty;
 - set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker-Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=9.3' | xcpretty;
