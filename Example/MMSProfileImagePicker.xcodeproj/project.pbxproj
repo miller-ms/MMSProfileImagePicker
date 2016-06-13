@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */; };
 		2C96579B1C7269750051858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96579A1C7269750051858C /* Main.storyboard */; };
 		2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96582A1C72DF030051858C /* Launch Screen.storyboard */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		0F4ED6F9287570C2B3637EAE /* MMSProfileImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MMSProfileImagePicker.podspec; path = ../MMSProfileImagePicker.podspec; sourceTree = "<group>"; };
 		2C30B3881C8F8B620070CF5C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMSProfileImagePicker.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MMSProfileImagePicker-cocllnukfylwndaeaenjsqjvnpqh/Build/Products/Debug-iphonesimulator/MMSProfileImagePicker/MMSProfileImagePicker.framework"; sourceTree = "<group>"; };
 		2C96579A1C7269750051858C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2C96582A1C72DF030051858C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2CD54D3D1D0CA87F007A50F8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -113,6 +116,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
