@@ -7,13 +7,9 @@
 [![Readme Score](http://readme-score-api.herokuapp.com/score.svg?url=miller-ms/mmsprofileimagepicker)](http://clayallsopp.github.io/readme-score?url=miller-ms/mmsprofileimagepicker)
 
 This class provides the capabilities for selecting an image from the photo library or camera, or submitting one for editing in a circular mask.  The selected and edited image would typically be used for a profile displayed in a circle. With this class an application can provide identical profile selection features found in the contacts app. 
-
-
 <p align="center">
-<img src=“screenshot.gif” alt="Example">
+<img src="screenshot.gif" "alt="Example">
 </p>
-
-
 ## Basic Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
