@@ -10,7 +10,7 @@ This class provides the capabilities for selecting an image from the photo libra
 
 
 <p align="center">
-<img src="ProfilePickerExample.png" alt="Example">
+<img src=“screenshot.gif” alt="Example">
 </p>
 
 
