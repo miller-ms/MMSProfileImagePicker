@@ -10,6 +10,7 @@ Released on 2016-10-04.
 - Corrected problem where unable to sitch camera when return to camera from edit screen (#1)
 - Replaced UIImagePickerController with MMSCameraViewController Pod for taking.
 - Has a limitation when taking a photo with the front lens where the captured image is the mirrored reflection.  Needs a new version of the camera object to correct.
+- Dependent pod MMSCameraViewController requires swift 3.
 - Added by [William Miller](https://github.com/miller-ms).
 
 
