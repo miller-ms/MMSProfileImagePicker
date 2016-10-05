@@ -2,7 +2,6 @@
 
 #import "MMSProfileImagePicker.h"
 #import "MMSProfileImagePickerDelegate.h"
-#import "MMSProfilePickerPrivateDelegateController.h"
 #import "UIImage+Cropping.h"
 
 FOUNDATION_EXPORT double MMSProfileImagePickerVersionNumber;

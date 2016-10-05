@@ -1,8 +1,10 @@
 //
-//  MMSProfilePickerPrivateDelegateController.h
+//  MMSCameraViewDelegate.swift
+//  Pods
 //
-//  Copyright © 2016 William Miller, http://millermobilesoft.com/
-//  email:<support@millermobilesoft.com>
+//  Created by William Miller on 9/4/16.
+//
+//  Copyright (c) 2016 William Miller <support@millermobilesoft.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -21,22 +23,13 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-//
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-#import "MMSProfileImagePickerDelegate.h"
-
-@interface MMSProfilePickerPrivateDelegateController : UINavigationController <UINavigationControllerDelegate>
-
-/**
- *  Initialize with reference to the profile picker.  When navigation controller delegates are invoked, this class passes the call onto the profile picker.
- *
- *  @param presentingPicker The profile picker instance creating the delegate.
- *
- *  @return an instance to the controller
- */
--(instancetype) initWithPicker:(MMSProfileImagePicker*)presentingPicker;
+@objc public protocol MMSCameraViewDelegate {
+    
+    
+    func cameraDidCaptureStillImage(_ image:UIImage, camera cameraController: MMSCameraViewController)
 
 
-@end
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MMSCameraViewController" customModule="MMSCameraViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="rps-JY-WCF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Camera" customClass="CameraView" customModule="MMSCameraViewController" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-SP-Utp" userLabel="Preview">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zgm-SP-Utp" secondAttribute="height" multiplier="9:16" identifier="aspectratio" id="weI-cQ-IlG"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xae-Km-1Kl">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29674030172413796" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Tap to Resume">
+                        <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="resumeInterruptedSession:" destination="-1" eventType="touchUpInside" id="6ih-bJ-CDb"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Unavailable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi1-hs-fEf">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xiq-OC-tju" userLabel="Top Bar">
+                    <subviews>
+                        <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-W1-YSI">
+                            <frame key="frameInset" minX="31" minY="10" width="33" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="flashauto">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="toggleFlash:" destination="-1" eventType="touchUpInside" id="jHF-WU-LVr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="RP6-KQ-0GV"/>
+                    </constraints>
+                </view>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2K-FH-PAD" userLabel="Bottom Bar">
+                    <subviews>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-eO-GLF">
+                            <state key="normal" image="snap">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="ZEQ-Ie-Rdh"/>
+                            </connections>
+                        </button>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY8-J4-wCD">
+                            <state key="normal" image="switchcamera">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="switchCamera:" destination="-1" eventType="touchUpInside" id="L1f-R1-X8K"/>
+                            </connections>
+                        </button>
+                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-Bf-005">
+                            <state key="normal" image="cancel">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelCamera:" destination="-1" eventType="touchUpInside" id="N4s-Qt-nz2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="YY8-J4-wCD" firstAttribute="centerY" secondItem="l2K-FH-PAD" secondAttribute="centerY" id="1N6-sA-lLQ"/>
+                        <constraint firstAttribute="trailing" secondItem="YY8-J4-wCD" secondAttribute="trailing" constant="15" id="8ym-T9-P0v"/>
+                        <constraint firstItem="Aaa-Bf-005" firstAttribute="leading" secondItem="l2K-FH-PAD" secondAttribute="leading" constant="15" id="Deq-lE-TQN"/>
+                        <constraint firstItem="ye6-eO-GLF" firstAttribute="centerX" secondItem="l2K-FH-PAD" secondAttribute="centerX" id="Ox3-OW-zyL"/>
+                        <constraint firstItem="Aaa-Bf-005" firstAttribute="centerY" secondItem="l2K-FH-PAD" secondAttribute="centerY" id="e97-bl-8xf"/>
+                        <constraint firstItem="ye6-eO-GLF" firstAttribute="centerY" secondItem="l2K-FH-PAD" secondAttribute="centerY" id="hTd-75-EUh"/>
+                        <constraint firstAttribute="height" constant="90" id="uAr-7X-KBB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zgm-SP-Utp" secondAttribute="bottom" id="6UO-AT-rna"/>
+                <constraint firstItem="Gi1-hs-fEf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8Ue-0E-8Rb"/>
+                <constraint firstItem="l2K-FH-PAD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AaG-xB-vX6"/>
+                <constraint firstItem="Xiq-OC-tju" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Adh-Uu-xGe"/>
+                <constraint firstItem="zgm-SP-Utp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Cwz-cz-L6w"/>
+                <constraint firstItem="xae-Km-1Kl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EhS-9u-kle"/>
+                <constraint firstAttribute="bottom" secondItem="l2K-FH-PAD" secondAttribute="bottom" id="MX3-sV-Iq3"/>
+                <constraint firstAttribute="trailing" secondItem="Xiq-OC-tju" secondAttribute="trailing" id="NXn-Uk-Eob"/>
+                <constraint firstItem="Xiq-OC-tju" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="P1O-6o-xV8"/>
+                <constraint firstItem="xae-Km-1Kl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RT9-GK-1Yt"/>
+                <constraint firstItem="Gi1-hs-fEf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="a8J-2d-sPS"/>
+                <constraint firstAttribute="trailing" secondItem="l2K-FH-PAD" secondAttribute="trailing" id="cXQ-Kr-qht"/>
+                <constraint firstItem="zgm-SP-Utp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wJ8-p5-sKj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="bottomBarView" destination="l2K-FH-PAD" id="XE6-j2-Mj6"/>
+                <outlet property="cameraBtn" destination="YY8-J4-wCD" id="K8D-kN-Ysf"/>
+                <outlet property="cancelBtn" destination="Aaa-Bf-005" id="zPm-Em-OkE"/>
+                <outlet property="flashBtn" destination="g2s-W1-YSI" id="WJL-es-poY"/>
+                <outlet property="previewView" destination="zgm-SP-Utp" id="39I-gW-lR1"/>
+                <outlet property="resumeSessionBtn" destination="xae-Km-1Kl" id="oRx-gp-VOv"/>
+                <outlet property="snapBtn" destination="ye6-eO-GLF" id="Et0-DV-n2t"/>
+                <outlet property="topBarView" destination="Xiq-OC-tju" id="9zQ-pY-8uV"/>
+                <outlet property="unavailableLbl" destination="Gi1-hs-fEf" id="Wav-rc-XdH"/>
+            </connections>
+            <point key="canvasLocation" x="55.5" y="112.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="33" height="33"/>
+        <image name="flashauto" width="33" height="33"/>
+        <image name="snap" width="60" height="60"/>
+        <image name="switchcamera" width="33" height="33"/>
+    </resources>
+</document>

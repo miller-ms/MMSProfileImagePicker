@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 `MMSProfileImagePicker` adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.2.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.2.0)
+Released on 2016-10-04. 
+
+#### Updated
+- Corrected problem where unable to sitch camera when return to camera from edit screen (#1)
+- Replaced UIImagePickerController with MMSCameraViewController Pod for taking.
+- Has a limitation when taking a photo with the front lens where the captured image is the mirrored reflection.  Needs a new version of the camera object to correct.
+- Added by [William Miller](https://github.com/miller-ms).
+
+
 ## [1.1.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.1.0)
 Released on 2016-06-11. 
 

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264CD61DB258988E17FC5834 /* Pods_MMSProfileImagePicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176FCE5A6F49D9A33B65C685 /* Pods_MMSProfileImagePicker_Tests.framework */; };
 		2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */; };
 		2C96579B1C7269750051858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96579A1C7269750051858C /* Main.storyboard */; };
 		2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96582A1C72DF030051858C /* Launch Screen.storyboard */; };
+		5F5CBF92C7E7588AF1AF5170 /* Pods_MMSProfileImagePicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239EDA66BFDA5DC1778D7282 /* Pods_MMSProfileImagePicker_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		0F4ED6F9287570C2B3637EAE /* MMSProfileImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MMSProfileImagePicker.podspec; path = ../MMSProfileImagePicker.podspec; sourceTree = "<group>"; };
+		176FCE5A6F49D9A33B65C685 /* Pods_MMSProfileImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMSProfileImagePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		239EDA66BFDA5DC1778D7282 /* Pods_MMSProfileImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMSProfileImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C30B3881C8F8B620070CF5C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMSProfileImagePicker.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MMSProfileImagePicker-cocllnukfylwndaeaenjsqjvnpqh/Build/Products/Debug-iphonesimulator/MMSProfileImagePicker/MMSProfileImagePicker.framework"; sourceTree = "<group>"; };
 		2C96579A1C7269750051858C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				5F5CBF92C7E7588AF1AF5170 /* Pods_MMSProfileImagePicker_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,7 @@
 			files = (
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
+				264CD61DB258988E17FC5834 /* Pods_MMSProfileImagePicker_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +126,8 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
+				239EDA66BFDA5DC1778D7282 /* Pods_MMSProfileImagePicker_Example.framework */,
+				176FCE5A6F49D9A33B65C685 /* Pods_MMSProfileImagePicker_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -248,7 +256,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "William Miller";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 58WUGF3NUP;
+						ProvisioningStyle = Automatic;
+					};
 					6003F5AD195388D20070C39A = {
+						DevelopmentTeam = 58WUGF3NUP;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -337,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B7CDD22D338C6F4E28E31546 /* [CP] Copy Pods Resources */ = {
@@ -367,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F9D9F923123E874560EAC58E /* [CP] Copy Pods Resources */ = {
@@ -515,6 +528,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 58WUGF3NUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
@@ -537,6 +553,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 58WUGF3NUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
@@ -557,6 +576,7 @@
 			baseConfigurationReference = 6A2B4C1F2523448AF1CFB6BE /* Pods-MMSProfileImagePicker_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 58WUGF3NUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -580,6 +600,7 @@
 			baseConfigurationReference = B0AD89C5DAEE39FDBD043CD1 /* Pods-MMSProfileImagePicker_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 58WUGF3NUP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",

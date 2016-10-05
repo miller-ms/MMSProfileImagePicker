@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MMSProfileImagePicker"
-  s.version          = "1.1.0"
+  s.version          = "1.2.0"
   s.summary          = "A profile image selection view controller supporting image selection and editing behavior like in the contacts app."
   s.description      = <<-DESC
     This class supports the feature for selecting an image from the photo library or camera for use as a profile image. Before final selection, it presents an edit screen with a circle overalay to resize and position the image for cropping in a square whose side is the length of the circle's diameter.  An image can be submitted to the class for editing only.  With this class you can emulate the features of the contact app's profile image selection.
@@ -31,4 +31,5 @@ Pod::Spec.new do |s|
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'AVFoundation', 'CoreMedia', 'ImageIO'
+  s.dependency 'MMSCameraViewController'
 end

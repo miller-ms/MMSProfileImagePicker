@@ -25,8 +25,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MMSProfileImagePickerDelegate.h"
+@import MMSCameraViewController;
 
-@interface MMSProfileImagePicker : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MMSProfileImagePicker : UIViewController <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MMSCameraViewDelegate>
 
 /**
  *  Determines how small the image can be scaled.  The default is 1 i.e. it can be made smaller than original.

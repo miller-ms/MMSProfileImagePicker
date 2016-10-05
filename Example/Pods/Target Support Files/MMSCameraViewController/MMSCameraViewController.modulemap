@@ -1,0 +1,6 @@
+framework module MMSCameraViewController {
+  umbrella header "MMSCameraViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

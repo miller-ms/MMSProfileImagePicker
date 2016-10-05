@@ -1,5 +1,5 @@
 //
-//  MMSProfileImagePickerDelegate
+//  MMSProfileImagePicker
 //
 //  Copyright © 2016 William Miller, http://millermobilesoft.com/
 //  email:<support@millermobilesoft.com>
@@ -27,7 +27,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "UIImage+Cropping.h"
 #import "MMSProfileImagePicker.h"
-#import "MMSProfilePickerPrivateDelegateController.h"
 @import AVFoundation;
 @import CoreMedia;
 @import ImageIO;
@@ -86,6 +85,11 @@ const CGFloat kOverlayInset = 10;
     UIImagePickerController* imagePicker;
     
     /**
+     *
+     */
+    MMSCameraViewController* camera;
+    
+    /**
      *  Session for captureing a still image
      */
     AVCaptureSession* session;
@@ -106,6 +110,11 @@ const CGFloat kOverlayInset = 10;
     BOOL isPresentingCamera;
     
     /**
+     *  to determine if the crop screen is displayed from the camera path
+     */
+    BOOL didChooseImage;
+
+    /**
      *  true when the snap photo target has been replaced in the UIImagePickerController
      */
     BOOL isSnapPhotoTargetAdded;
@@ -120,11 +129,6 @@ const CGFloat kOverlayInset = 10;
      */
     UIViewController* presentingVC;
     
-    /**
-     *  A reference to the proxy delegate
-     */
-    MMSProfilePickerPrivateDelegateController* proxyVC;
-        
     
 }
 
@@ -149,6 +153,7 @@ const CGFloat kOverlayInset = 10;
     isPresentingCamera = NO;
     isPreparingStill = NO;
     isSnapPhotoTargetAdded = NO;
+    didChooseImage = NO;
     imageToEdit = NULL;
     return self;
     
@@ -184,15 +189,15 @@ const CGFloat kOverlayInset = 10;
 
     if (isPresentingCamera) {
         
-        [imagePicker dismissViewControllerAnimated:NO completion:nil];
+        [super dismissViewControllerAnimated:NO completion:completion];
         
-        [proxyVC dismissViewControllerAnimated:NO completion:nil];
+        if (didChooseImage)
+            [camera dismissViewControllerAnimated:NO completion:^{isPresentingCamera = NO; didChooseImage = NO;}];
         
-        isPresentingCamera = NO;
         
     } else if (isDisplayFromPicker) {
         
-        [super dismissViewControllerAnimated:NO completion:nil];
+        [super dismissViewControllerAnimated:NO completion:^{didChooseImage = NO;}];
         
         [imagePicker dismissViewControllerAnimated:NO completion:nil];
         
@@ -200,7 +205,7 @@ const CGFloat kOverlayInset = 10;
         
     } else {
         
-        [super dismissViewControllerAnimated:flag completion:completion];
+        [super dismissViewControllerAnimated:flag completion:^{if (completion) completion(); didChooseImage = NO;}];
 
     }
     
@@ -658,33 +663,6 @@ const CGFloat kOverlayInset = 10;
     return inset;
 }
 
-#pragma mark - UINavigationControllerDelegate
-/** did show view controller
- *  when the UIImagePickerController is presenting a camera to capture a still image, this routine removes the target for the button to taking the picture and adds a custom target.  This allows the class to display a customer move and scale screen for the still image.
- *
- *  @param navigationController the navigation controller
- *  @param viewController       the view controller presenting
- *  @param animated             true if animated
- */
--(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    
-    if (imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera && !isSnapPhotoTargetAdded && isPresentingCamera) {
-        
-        UIView* bottomBarView = [viewController.view.subviews objectAtIndex:2];
-        
-        UIButton* buttonView = [bottomBarView.subviews objectAtIndex:8];
-        
-        [buttonView removeTarget:viewController.view action:NULL forControlEvents:UIControlEventTouchUpInside];
-        
-        [buttonView addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
-        
-        isSnapPhotoTargetAdded = YES;
-
-    }
-    
-}
-
 
 #pragma mark - UIImagePickerControllerDelegate
 
@@ -697,9 +675,13 @@ const CGFloat kOverlayInset = 10;
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     
-    UIImage* tempImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    imageToEdit = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    [self editImage:tempImage];
+    self.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [imagePicker setNavigationBarHidden:YES];
+    
+    [imagePicker pushViewController:self animated:NO];
     
 }
 
@@ -717,19 +699,6 @@ const CGFloat kOverlayInset = 10;
 
 #pragma mark - action
 
-/**
- *  called by the UIImagePickerController when the user presses the take photo button in the camera view.
- *
- *  @param sender the button view tapped
- */
--(IBAction)takePhoto:(UIButton*)sender {
-    
-    [self prepareToCaptureStillImage];
-    
-    return;
-    
-}
-
 /** choose
  *  called when the user is finished with moving and scaling the image to select it as final.  It crops the image and sends the information to the delegate.
  *
@@ -740,6 +709,8 @@ const CGFloat kOverlayInset = 10;
     UIImage* img;
     
     CGPoint cropOrigin;
+    
+    didChooseImage = YES;
     
     /* compute the crop rectangle based on the screens dimensions.
      */
@@ -779,7 +750,8 @@ const CGFloat kOverlayInset = 10;
         
     } else if (isPresentingCamera) {
         
-        [imagePicker popViewControllerAnimated:NO];
+//        [imagePicker popViewControllerAnimated:NO];
+        [self dismissViewControllerAnimated:NO completion:nil];
         
     } else {
         
@@ -801,9 +773,11 @@ const CGFloat kOverlayInset = 10;
     
     self.modalPresentationStyle = UIModalPresentationFullScreen;
     
-    [imagePicker setNavigationBarHidden:YES];
+//    [imagePicker setNavigationBarHidden:YES];
     
-    [imagePicker pushViewController:self animated:NO];
+//    [imagePicker pushViewController:self animated:NO];
+    
+    [camera presentViewController:self animated:YES completion:nil];
     
 }
 
@@ -868,202 +842,21 @@ const CGFloat kOverlayInset = 10;
     
     isPresentingCamera = YES;
     
-    imagePicker = [[UIImagePickerController alloc] init];
+    camera = [[MMSCameraViewController alloc] initWithNibName:nil bundle:nil];
     
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    imagePicker.allowsEditing = NO;
-    
-    imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
-    
-    proxyVC = [[MMSProfilePickerPrivateDelegateController alloc] initWithPicker:self];
-    
-    imagePicker.delegate = self;
+    camera.delegate = self;
     
     presentingVC = vc;
     
-    [presentingVC presentViewController:proxyVC animated:NO completion:nil];
-    
-    [proxyVC presentViewController:imagePicker animated:YES completion:nil];
-    
-//    [presentingVC presentViewController:imagePicker animated:YES completion:nil];
-    
+    [presentingVC presentViewController:camera animated:NO completion:nil];
     
 }
 
 
 #pragma mark - Camera setup and capture
-
-/** prepare to capture still image
- *   creates the objects necessary to capture a still image from the camera. There's a 1 second delay before acquiring the image from the camera.  This improves the quality of the acquired image.  Some have suggested the delay is required to give the camera time to complete it's initialization.
- */
--(void)prepareToCaptureStillImage {
+- (void)cameraDidCaptureStillImage:(UIImage *)image camera:(MMSCameraViewController *)cameraController {
     
-    if (!isPreparingStill) {
-    
-        session = [[AVCaptureSession alloc] init];
-    
-        session.sessionPreset = AVCaptureSessionPresetHigh;
-    
-        [self captureInput:[self getCameraDevice]];
-    
-        stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    
-        NSDictionary *outputSettings = @{AVVideoCodecKey : AVVideoCodecJPEG, AVVideoQualityKey : @1.0, AVVideoProfileLevelKey:AVVideoProfileLevelH264BaselineAutoLevel};
-    
-        [stillImageOutput setOutputSettings:outputSettings];
-    
-        [session addOutput:stillImageOutput];
-        
-        isPreparingStill = YES;
-        
-    }
-    
-    [session startRunning];
-    
-    /* give the camera some time to focus, energize the flash, and execute the capture before acquiring the image.
-     */
-    [NSTimer scheduledTimerWithTimeInterval:0.75
-                                     target:self
-                                   selector:@selector(captureStillImage)
-                                   userInfo:nil repeats:NO];
-    
-}
-
-
-/** capture still image
- *  acquires the image from the camera, transforms it into a UIImage, and presents the move and scale view for user editing and final selection.
-
- */
--(void)captureStillImage {
-    
-    [stillImageOutput captureStillImageAsynchronouslyFromConnection:[self cameraConnection:stillImageOutput] completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error){
-        
-        if (imageDataSampleBuffer) {
-            
-            
-            //  UIImage* image = [self imageFromSampleBuffer:imageDataSampleBuffer];
-            
-            NSData* imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-            
-            UIDevice *device = [UIDevice currentDevice];
-            
-            UIImageOrientation theOrientation  = UIImageOrientationUp;
-            
-            switch (device.orientation) {
-                    
-                case UIDeviceOrientationPortrait:
-                case UIDeviceOrientationFaceUp:
-                    theOrientation = UIImageOrientationRight;
-                    break;
-                    
-                case UIDeviceOrientationPortraitUpsideDown:
-                case UIDeviceOrientationFaceDown:
-                    theOrientation = UIImageOrientationLeft;
-                    break;
-                    
-                case UIDeviceOrientationLandscapeLeft:
-                    theOrientation = UIImageOrientationUp;
-                    break;
-                    
-                case UIDeviceOrientationLandscapeRight:
-                    theOrientation = UIImageOrientationDown;
-                    break;
-                    
-                case UIDeviceOrientationUnknown:
-                    NSLog(@"Device orientation has unknown value.");
-                    break;
-                    
-            }
-            
-            UIImage *cameraImage = [UIImage imageWithData:imageData];
-            
-            cameraImage = [[UIImage alloc] initWithCGImage:cameraImage.CGImage scale:1.0 orientation:theOrientation];
-            
-            [session stopRunning];
-            
-            [self editImage:cameraImage];
-            
-        }
-    }];
-    
-}
-
-/* cameraConnection:  */
-/** camera connection
- *  returns a capture connection by walking through the collection of connections in the output object until it finds one of type AVMediaTypeVideo.
-
- *
- *  @param imageOutput holds the list of capture connections
- *
- *  @return the connection
- */
--(AVCaptureConnection*)cameraConnection:(AVCaptureStillImageOutput*)imageOutput  {
-    
-    AVCaptureConnection *videoConnection = nil;
-    
-    for (AVCaptureConnection *connection in imageOutput.connections) {
-        
-        for (AVCaptureInputPort *port in [connection inputPorts]) {
-            
-            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
-                
-                videoConnection = connection;
-                
-                return videoConnection;
-            }
-        }
-        
-    }
-    
-    return nil;
-    
-}
-
-
-/** Get camera device
- *  walks through the list of capture devices and returns the camera device positioned on the back of the mobile computer.
- *
- *  @return returns the camera device on the back of the camera
- */
-// #warning update to send the front or back device depending on what the user has selected.
--(AVCaptureDevice*)getCameraDevice {
-    
-    NSArray *devices = [AVCaptureDevice devices];
-    
-    AVCaptureDevice *device = nil;
-    
-    for (device in devices) {
-        
-        if ([device hasMediaType:AVMediaTypeVideo]) {
-            
-            if ([device position] == AVCaptureDevicePositionBack) {
-                break;
-                
-            }
-        }
-    }
-    
-    return device;
-    
-}
-
-/**
- *  creates device input object and adds it to the session.
- *
- *  @param device The device to add the input for the session.
- */
--(void)captureInput:(AVCaptureDevice*)device {
-    
-    NSError *error = nil;
-    
-    AVCaptureDeviceInput *input =[AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
-    if (!input) {
-        // Handle the error appropriately.
-    }
-    
-    [session addInput:input];
-    
+    [self editImage:image];
 }
 
 

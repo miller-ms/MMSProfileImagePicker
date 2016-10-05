@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/MMSCameraViewController/MMSCameraViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MMSProfileImagePicker/MMSProfileImagePicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSnapshotTestCase/FBSnapshotTestCase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/MMSCameraViewController/MMSCameraViewController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MMSProfileImagePicker/MMSProfileImagePicker.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSnapshotTestCase/FBSnapshotTestCase.framework"
 fi
