@@ -2,11 +2,11 @@
 All notable changes to this project will be documented in this file.
 `MMSProfileImagePicker` adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.3.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.3.0)
+## [1.2.1](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.2.1)
 Released on 2016-10-04. 
 
 #### Updated
-- Added file .swift-version to project.  Missed in version 1.2.0. Consequently adding 1.2 to cocoapods failed.
+- Added file .swift-version to project.  Missed in version 1.2.0. Consequently adding 1.2 to cocoapods failed and cannot correct without a new version.
 - Added by [William Miller](https://github.com/miller-ms).
 
 ## [1.2.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.2.0)
