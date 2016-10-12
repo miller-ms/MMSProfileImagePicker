@@ -56,7 +56,7 @@ open class MMSCameraViewController: UIViewController {
     var captureVideoPreviewLayer:AVCaptureVideoPreviewLayer!
     
     /// Set when orientation changes
-    var lastOrientation:UIInterfaceOrientation = .portrait
+    var lastOrientation:UIDeviceOrientation = .portrait
 
     /// Camera's capture output
     let stillImageOutput:AVCaptureStillImageOutput = {
@@ -135,7 +135,7 @@ open class MMSCameraViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        lastOrientation = deviceOrientation()
+        lastOrientation = deviceOrientation(lastOrientation)
 
     }
     
@@ -486,16 +486,41 @@ open class MMSCameraViewController: UIViewController {
             
             switch device.orientation {
                 
-            case UIDeviceOrientation.portrait, UIDeviceOrientation.faceUp:
+            case .portrait:
                 imageOrientation = UIImageOrientation.right
-            case UIDeviceOrientation.portraitUpsideDown, UIDeviceOrientation.faceDown:
+            case .portraitUpsideDown:
                 imageOrientation = UIImageOrientation.left
-            case UIDeviceOrientation.landscapeLeft:
-                imageOrientation = UIImageOrientation.up
-            case UIDeviceOrientation.landscapeRight:
-                imageOrientation = UIImageOrientation.down
-            case UIDeviceOrientation.unknown:
+            case .landscapeLeft:
+                if self.cameraDevice?.position == .back {
+                    imageOrientation = UIImageOrientation.up
+                } else {
+                    imageOrientation = UIImageOrientation.downMirrored
+                }
+            case .landscapeRight:
+                if self.cameraDevice?.position == .back {
+                    imageOrientation = UIImageOrientation.down
+                } else {
+                    imageOrientation = UIImageOrientation.upMirrored
+                }
+            case .unknown:
                 print("Device orientation has unknown value.")
+                
+            case .faceDown, .faceUp:
+                // if the orientatino is faceup or facedown than use the last orientation for the image.
+                imageOrientation = {
+                    switch self.lastOrientation {
+                    case .landscapeLeft:
+                        return UIImageOrientation.up
+                    case .landscapeRight:
+                        return UIImageOrientation.down
+                    case .portrait:
+                        return UIImageOrientation.right
+                    case .portraitUpsideDown:
+                        return UIImageOrientation.left
+                    default:
+                        return UIImageOrientation.right
+                    }
+                } ()
             }
             
             // convert the captured data into a UIImage
@@ -592,7 +617,7 @@ open class MMSCameraViewController: UIViewController {
     */
     internal func notifyOrientationChanged(_ notification: Notification) {
         
-        let currentOrientation = deviceOrientation()
+        let currentOrientation = deviceOrientation(lastOrientation)
         
         rotateButtons(from: lastOrientation, to: currentOrientation)
         
@@ -645,6 +670,7 @@ open class MMSCameraViewController: UIViewController {
         }
         
     }
+    
     // FIXME:  Need to figure out what to do with a runtime error
     internal func notifySessionRuntimeError(_ notification: Notification) {
         
@@ -695,7 +721,7 @@ open class MMSCameraViewController: UIViewController {
                     
                     UIView.animate(withDuration: 0.25, animations: {
                         self.cameraView.previewView.layer.opacity = 1.0
-                    }) 
+                    })
                     
                 }
             }
@@ -720,8 +746,11 @@ open class MMSCameraViewController: UIViewController {
     /**
         rotates the camera's UI controls from their from orientation to their to orientation.
     */
-    func rotateButtons (from fromOrientation:UIInterfaceOrientation, to toOrientation:UIInterfaceOrientation) {
+    func rotateButtons (from fromOrientation:UIDeviceOrientation, to toOrientation:UIDeviceOrientation) {
         
+        guard fromOrientation != toOrientation else {
+            return
+        }
         
         let from = CGAffineTransform(rotationAngle: radians(degrees: rotateDegrees(orientation: fromOrientation)))
         
@@ -753,6 +782,7 @@ open class MMSCameraViewController: UIViewController {
                 completion: nil
             )
             
+            print("in rotate buttons")
             
         }
         
@@ -770,17 +800,7 @@ open class MMSCameraViewController: UIViewController {
         // the controls are disabled while the camer is being updated
         disableControls()
         
-        cameraQueue.async {
-            
-// TODO: Remove this comment
-//            var position = AVCaptureDevicePosition.front
-//            
-//            var device = self.cameraDevice
-//            
-//            if device != nil {
-//                
-//                position = (device?.position)!
-//            }
+        DispatchQueue.main.async {
             
             // find the camera device that is the opposite of the current position.
             var device = self.cameraDevice
@@ -816,7 +836,7 @@ open class MMSCameraViewController: UIViewController {
             self.activateCameraDevice(device)
             
             self.enableControls()
-            
+                        
         }
         
     }
@@ -899,8 +919,10 @@ open class MMSCameraViewController: UIViewController {
                 DispatchQueue.main.async {
                     
                     self.cameraView.resumeSessionBtn.isHidden = true
+
                 }
             }
+            
         }
         
     }

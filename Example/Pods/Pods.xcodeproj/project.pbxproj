@@ -16,10 +16,7 @@
 		1CCF461002380C2A16F5BA6FCDD13905 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6418C4AA7BCB527EC5EF132EF2CA1AA /* Foundation.framework */; };
 		226A337260BA51B7D24D328540248F04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A6A9DB0C07B265B64D811AE1A03504 /* UIKit.framework */; };
 		263C9D596D85A551F929EC23E3CEB1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6418C4AA7BCB527EC5EF132EF2CA1AA /* Foundation.framework */; };
-		2C675DD51DA3DE7A00315868 /* MMSCameraViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE467475424776EA47AA3C42E98E7328 /* MMSCameraViewController.framework */; };
-		2C675DD61DA4786500315868 /* buttons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF845311919F5E7C84A1100B66A0189 /* buttons.xcassets */; };
-		2C675DD71DA4787100315868 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E4DEC4F9A2827DE430003CE1FD0B756 /* Localizable.strings */; };
-		2C675DD81DA4787800315868 /* MMSCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB620D28394C4CC9426418DEFF0F348 /* MMSCameraViewController.xib */; };
+		2C71D4081DADAFD6004A5039 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C71D4061DADAF4C004A5039 /* Localized.strings */; };
 		2C87E1788C8FA06AE3481A2226E3AF2D /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C431D494D124A4322116B8E4FD9E0A /* UIApplication+StrictKeyWindow.m */; };
 		34A1C7E576C58A9D3F3101448308BF3E /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 781BF10D45A02221B0899B21E179D9E0 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		40275A6F32FF587254254A242EFD853F /* Pods-MMSProfileImagePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F59A3C1CB8B56C42D109C9066CA89CE /* Pods-MMSProfileImagePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,11 +36,14 @@
 		8197576572CE54E61B604CE742F517D6 /* UIImage+Cropping.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADA1E2035D3953975428420FC1D3F73 /* UIImage+Cropping.m */; };
 		85D178DFCA1BC67BBFB1188E34EC5B19 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290E4C2B7425509BE22148D11DBBC8B5 /* SwiftSupport.swift */; };
 		864BFA933708D5F8E7265EFFE704600E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6418C4AA7BCB527EC5EF132EF2CA1AA /* Foundation.framework */; };
+		8A4DB659D4D4395B6751204EA1EB6EE1 /* MMSCameraViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B55324B722E16EC310BB9866FCCC67B /* MMSCameraViewController.framework */; };
 		8ACF6A5515A175054E22414BF740EF14 /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CF75C0F230B4AC13E943891EFC14AFA /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AF7DF9D66F551CA3C7B1A47F5A83211 /* MMSCameraViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C33154F6C3FC8CB78A91779AB4C1B4 /* MMSCameraViewControllerExtensions.swift */; };
 		8C3ED601B547AD238FFB68704D95BF46 /* Pods-MMSProfileImagePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6B315CAA485C5876534E824CCC6DE6A /* Pods-MMSProfileImagePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95544FE34A2AE5FABAD8736A0C1CF99C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E4DEC4F9A2827DE430003CE1FD0B756 /* Localizable.strings */; };
 		9F611940376A863E7583748749105CA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6418C4AA7BCB527EC5EF132EF2CA1AA /* Foundation.framework */; };
 		9FA3B93CE0ECAC3CDC30890659AACF82 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DF971A984E066C47BF8F17436E3D948B /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A156F18423115F5BACAA9C46F96009AC /* buttons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF845311919F5E7C84A1100B66A0189 /* buttons.xcassets */; };
 		A8BAFE9B3AAFC9D25F06854C0D2A22D8 /* MMSProfileImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = FBC5827C906720B8EF62C2D78190D568 /* MMSProfileImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A932B89F114B02D24B5FBF362FD0B9F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6418C4AA7BCB527EC5EF132EF2CA1AA /* Foundation.framework */; };
 		B6A67A3B998747E4290BF6010EC33806 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F98985AB4062A41484D5658D2B1DD5DF /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +62,7 @@
 		F366B775C22BBE1DBAC7BDB7DE8F0A26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF38B9FF0B8C81F8655AEBC7509C0557 /* QuartzCore.framework */; };
 		F47158C234C50FFB069A1EF8AB26D9F1 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EBA0DCEAB65CB776FBF0EF6AE68A64 /* FBSnapshotTestController.m */; };
 		FA400FAA51FE86BB4C5A19DE36D1834D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08439BD80FBCD6560EC86A11A082CC /* CameraView.swift */; };
+		FF8F6A7F8828164C9AFAC1B71473993C /* MMSCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DB620D28394C4CC9426418DEFF0F348 /* MMSCameraViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		2AD63B76128BD4CEA812D979A02D1314 /* Pods-MMSProfileImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMSProfileImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2B916BE9F9C81F121C6BC3615C9F453D /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		2C08439BD80FBCD6560EC86A11A082CC /* CameraView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = MMSCameraViewController/Classes/CameraView.swift; sourceTree = "<group>"; };
+		2C71D4051DADAF4C004A5039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localized.strings; sourceTree = "<group>"; };
 		3065745F885E2227B9CFE7A949062E56 /* Pods_MMSProfileImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MMSProfileImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E7D8A954B3CB03E7DF1613C5A43F7D /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		379EA0D532304C982971A4EEDA1556AD /* MMSCameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MMSCameraViewController.swift; path = MMSCameraViewController/Classes/MMSCameraViewController.swift; sourceTree = "<group>"; };
@@ -215,11 +217,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C675DD51DA3DE7A00315868 /* MMSCameraViewController.framework in Frameworks */,
 				61BE8EDDF0ECD1078534E95033BD2CD6 /* AVFoundation.framework in Frameworks */,
 				73D4AC461C6D47AF54FF7B157CD98D05 /* CoreMedia.framework in Frameworks */,
 				864BFA933708D5F8E7265EFFE704600E /* Foundation.framework in Frameworks */,
 				4FC05C53B8F06E64049095357742C4DF /* ImageIO.framework in Frameworks */,
+				8A4DB659D4D4395B6751204EA1EB6EE1 /* MMSCameraViewController.framework in Frameworks */,
 				DA85D068B66411942FA610854CD40455 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +281,14 @@
 			);
 			name = "Pods-MMSProfileImagePicker_Example";
 			path = "Target Support Files/Pods-MMSProfileImagePicker_Example";
+			sourceTree = "<group>";
+		};
+		2C71D4031DADAC8C004A5039 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C71D4061DADAF4C004A5039 /* Localized.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		31CED9DF80AE576955E5984E7743BA0F /* Products */ = {
@@ -344,6 +354,7 @@
 		76B8F4D4C4A9E1F229CDB75E89F0E359 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				2C71D4031DADAC8C004A5039 /* Resources */,
 				718CFD2E3BDF8E1CE7C24D598277CF2E /* Classes */,
 			);
 			path = Pod;
@@ -573,6 +584,7 @@
 				AEE12C6F9CEB9BAF6A76AB0E7B0E33EE /* Sources */,
 				465EB6BAA5D05A4F72F815E3E1FFA227 /* Frameworks */,
 				E7553F418786731EE4FC8FA0FB633747 /* Headers */,
+				2C71D4071DADAFCF004A5039 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -685,13 +697,7 @@
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
-					3E43D13DE8AFD46F7911B86FEAA2B2C4 = {
-						LastSwiftMigration = 0800;
-					};
 					59CEBC6E2A94A867B14E93998554A29E = {
-						LastSwiftMigration = 0800;
-					};
-					5DB46EA499F9A5E22765121102FCC34B = {
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -724,9 +730,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB0517407BEBDEFA0F235B99A3519D6 /* MMSCameraViewControllerResources.bundle in Resources */,
-				2C675DD81DA4787800315868 /* MMSCameraViewController.xib in Resources */,
-				2C675DD71DA4787100315868 /* Localizable.strings in Resources */,
-				2C675DD61DA4786500315868 /* buttons.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C71D4071DADAFCF004A5039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C71D4081DADAFD6004A5039 /* Localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +745,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A156F18423115F5BACAA9C46F96009AC /* buttons.xcassets in Resources */,
+				95544FE34A2AE5FABAD8736A0C1CF99C /* Localizable.strings in Resources */,
+				FF8F6A7F8828164C9AFAC1B71473993C /* MMSCameraViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,6 +874,15 @@
 			path = MMSCameraViewController/Assets;
 			sourceTree = "<group>";
 		};
+		2C71D4061DADAF4C004A5039 /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C71D4051DADAF4C004A5039 /* Base */,
+			);
+			name = Localized.strings;
+			path = ../../Pod/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
 		4DB620D28394C4CC9426418DEFF0F348 /* MMSCameraViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -985,7 +1008,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -1061,7 +1084,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -1281,7 +1304,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1355,7 +1377,6 @@
 				PRODUCT_NAME = Pods_MMSProfileImagePicker_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7C2343CAAC8495F6708A3BE8CF62C7C"
+               BlueprintIdentifier = "9F6D52690CA390A90FA5320950F6B91C"
                BuildableName = "Pods_MMSProfileImagePicker_Example.framework"
                BlueprintName = "Pods-MMSProfileImagePicker_Example"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E7C2343CAAC8495F6708A3BE8CF62C7C"
+            BlueprintIdentifier = "9F6D52690CA390A90FA5320950F6B91C"
             BuildableName = "Pods_MMSProfileImagePicker_Example.framework"
             BlueprintName = "Pods-MMSProfileImagePicker_Example"
-            ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

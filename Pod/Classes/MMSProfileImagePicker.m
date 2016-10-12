@@ -342,7 +342,7 @@ const CGFloat kOverlayInset = 10;
     
     label = [[UILabel alloc] initWithFrame:kTitleFrame];
     
-    label.text = @"Move and Scale";
+    label.text = [self lString:@"Edit.title" comment:@"Localized edit tite"];
     
     label.textColor = _foregroundColor;
     
@@ -384,11 +384,11 @@ const CGFloat kOverlayInset = 10;
     
     if (isPresentingCamera) {
         
-        [button setTitle:@"Use Photo" forState:UIControlStateNormal];
+        [button setTitle:[self lString:@"Button.choose.photoFromCamera" comment:@"Local use photo"] forState:UIControlStateNormal];
         
     } else {
         
-        [button setTitle:@"Choose" forState:UIControlStateNormal];
+        [button setTitle:[self lString:@"Button.choose.photoFromPicker" comment:@"Local use picker"]  forState:UIControlStateNormal];
     }
 
     [button setTitleColor:_foregroundColor forState:UIControlStateNormal];
@@ -434,11 +434,11 @@ const CGFloat kOverlayInset = 10;
      */
     if (isPresentingCamera) {
         
-        [button setTitle:@"Retake" forState:UIControlStateNormal];
+        [button setTitle:[self lString:@"Button.cancel.photoFromCamera" comment:@"Local cancel photo"] forState:UIControlStateNormal];
         
     } else {
         
-        [button setTitle:@"Cancel" forState:UIControlStateNormal];
+        [button setTitle:[self lString:@"Button.cancel.photoFromPicker" comment:@"Local cancel picker"] forState:UIControlStateNormal];
         
     }
     
@@ -849,6 +849,20 @@ const CGFloat kOverlayInset = 10;
     presentingVC = vc;
     
     [presentingVC presentViewController:camera animated:NO completion:nil];
+    
+}
+
+/**
+ *  returns a localized string based on the key.
+ *
+ *  @param key - the identifier for the string.
+ *  @param comment - the help text for the key.
+ *
+ *  @return - returns the localized string identified by the key.
+ */
+- (NSString*)lString:(NSString*) key comment:(NSString*)comment {
+    
+    return NSLocalizedStringFromTableInBundle(key, @"Localized", [NSBundle bundleForClass:[MMSProfileImagePicker class]], comment);
     
 }
 

@@ -1,0 +1,12 @@
+/* 
+  Localized.strings
+  Pods
+
+  Created by William Miller on 10/11/16.
+
+*/
+"Edit.title" = "Move and Scale";
+"Button.choose.photoFromCamera" = "Use Photo";
+"Button.choose.photoFromPicker" = "Choose";
+"Button.cancel.photoFromCamera" = "Retake";
+"Button.cancel.photoFromPicker" = "Cancel";

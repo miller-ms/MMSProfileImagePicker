@@ -30,9 +30,10 @@ import Foundation
 
 extension MMSCameraViewController {
     
-    func rotateDegrees(orientation: UIInterfaceOrientation) -> Double {
+    func rotateDegrees(orientation: UIDeviceOrientation) -> Double {
         
         switch orientation {
+            
         case .portrait:
             return 0.0
             
@@ -41,35 +42,40 @@ extension MMSCameraViewController {
             
         case .landscapeRight:
             return -90.0
+            
         case .landscapeLeft:
             return 90.0
+            
         default:
             return 0.0
+            
         }
     }
 
 
-    func deviceOrientation() -> UIInterfaceOrientation {
+    func deviceOrientation(_ inOrientation:UIDeviceOrientation) -> UIDeviceOrientation {
         
-       let statusBarOrientation = UIDevice.current.orientation // UIApplication.sharedApplication().statusBarOrientation
+        let statusBarOrientation = UIDevice.current.orientation // UIApplication.sharedApplication().statusBarOrientation
         
-        let currentOrientation:UIInterfaceOrientation = {
-            switch statusBarOrientation {
-            case .portrait:
-                return UIInterfaceOrientation.portrait
-            case .landscapeLeft:
-                return UIInterfaceOrientation.landscapeLeft
-            case .landscapeRight:
-                return UIInterfaceOrientation.landscapeRight
-            case .portraitUpsideDown:
-                return UIInterfaceOrientation.portraitUpsideDown
-            default:
-                return .portrait
-            }
+        switch statusBarOrientation {
+        case .portrait:
+            return .portrait
             
-        }()
-        
-        return currentOrientation
+        case .landscapeLeft:
+            return .landscapeLeft
+            
+        case .landscapeRight:
+            return .landscapeRight
+            
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+            
+        case .faceUp, .faceDown:
+            return inOrientation
+            
+        default:
+            return .portrait
+        }
         
     }
 
