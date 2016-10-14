@@ -12,6 +12,7 @@ before_install:
  - sudo gem install xcpretty --no-rdoc --no-ri --no-document --quiet
  - sudo gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
 #- sudo gem install cocoapods --pre # Since Travis is not always on latest version
+ - pod repo update
 
 script:
 #- pod lib lint --quick
