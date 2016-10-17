@@ -11,6 +11,7 @@
 		2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */; };
 		2C96579B1C7269750051858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96579A1C7269750051858C /* Main.storyboard */; };
 		2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96582A1C72DF030051858C /* Launch Screen.storyboard */; };
+		2CEA15441DB48130001011DE /* Pods_MMSProfileImagePicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CEA15431DB48130001011DE /* Pods_MMSProfileImagePicker_Tests.framework */; };
 		5F5CBF92C7E7588AF1AF5170 /* Pods_MMSProfileImagePicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239EDA66BFDA5DC1778D7282 /* Pods_MMSProfileImagePicker_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -46,6 +47,7 @@
 		2C96582A1C72DF030051858C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2CD54D3D1D0CA87F007A50F8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		2CD54D3E1D0CA87F007A50F8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		2CEA15431DB48130001011DE /* Pods_MMSProfileImagePicker_Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MMSProfileImagePicker_Tests.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MMSProfileImagePicker-cocllnukfylwndaeaenjsqjvnpqh/Build/Products/Debug-iphonesimulator/Pods_MMSProfileImagePicker_Tests.framework"; sourceTree = "<group>"; };
 		460D500AC503F642D86EA408 /* Pods-MMSProfileImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSProfileImagePicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MMSProfileImagePicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMSProfileImagePicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEA15441DB48130001011DE /* Pods_MMSProfileImagePicker_Tests.framework in Frameworks */,
 				2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
@@ -122,6 +125,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA15431DB48130001011DE /* Pods_MMSProfileImagePicker_Tests.framework */,
 				2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
@@ -253,15 +257,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MMS;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "William Miller";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 58WUGF3NUP;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
-						DevelopmentTeam = 58WUGF3NUP;
+						ProvisioningStyle = Manual;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -462,14 +465,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -502,13 +510,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -526,11 +539,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 460D500AC503F642D86EA408 /* Pods-MMSProfileImagePicker_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
@@ -551,11 +565,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 754B0445565D8F5620AB39EC /* Pods-MMSProfileImagePicker_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
@@ -575,8 +590,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A2B4C1F2523448AF1CFB6BE /* Pods-MMSProfileImagePicker_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -599,8 +616,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0AD89C5DAEE39FDBD043CD1 /* Pods-MMSProfileImagePicker_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "597210190F8BF19C7FB82689104C675C"
+               BlueprintIdentifier = "39910186256560E698A83FAC3B6F19CB"
                BuildableName = "MMSProfileImagePicker.framework"
                BlueprintName = "MMSProfileImagePicker"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "597210190F8BF19C7FB82689104C675C"
+            BlueprintIdentifier = "39910186256560E698A83FAC3B6F19CB"
             BuildableName = "MMSProfileImagePicker.framework"
             BlueprintName = "MMSProfileImagePicker"
             ReferencedContainer = "container:Pods.xcodeproj">

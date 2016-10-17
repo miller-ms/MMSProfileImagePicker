@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F6D52690CA390A90FA5320950F6B91C"
-               BuildableName = "Pods_MMSProfileImagePicker_Example.framework"
-               BlueprintName = "Pods-MMSProfileImagePicker_Example"
+               BlueprintIdentifier = "8EDF8B6202B7501EDC5152571F78AB34"
+               BuildableName = "MMSCameraViewControllerResources.bundle"
+               BlueprintName = "MMSCameraViewController-MMSCameraViewControllerResources"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F6D52690CA390A90FA5320950F6B91C"
-            BuildableName = "Pods_MMSProfileImagePicker_Example.framework"
-            BlueprintName = "Pods-MMSProfileImagePicker_Example"
+            BlueprintIdentifier = "8EDF8B6202B7501EDC5152571F78AB34"
+            BuildableName = "MMSCameraViewControllerResources.bundle"
+            BlueprintName = "MMSCameraViewController-MMSCameraViewControllerResources"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
