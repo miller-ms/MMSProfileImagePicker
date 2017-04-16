@@ -445,7 +445,7 @@ open class MMSCameraViewController: UIViewController {
                 
             }
             
-            for port in (connection as AnyObject).inputPorts {
+            for port in (connection as! AVCaptureConnection).inputPorts {
                 if (port as! AVCaptureInputPort).mediaType == AVMediaTypeVideo {
                     videoConnection = connection as! AVCaptureConnection
                     break connectionloop

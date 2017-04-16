@@ -17,7 +17,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 Import the class header.
 
 ```objc
-#import "MMSProfileImagePicker.h"
+# import "MMSProfileImagePicker.h"
 ```
 
 Create a the profile picker object.  The application's view controller implements the MMSProfileImagePickerDelegate interface.  The interface's method is where profile picker passes the selected and edited image. Before calling one of the profile picker's methods, the application sets its delegate property.

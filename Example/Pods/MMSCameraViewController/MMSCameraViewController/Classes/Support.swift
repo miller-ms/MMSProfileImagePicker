@@ -22,5 +22,5 @@ internal func isDeviceOrientationPortrait() -> Bool {
 }
 
 internal func radians(degrees: Double) -> CGFloat {
-    return CGFloat(degrees / 180 * M_PI)
+    return CGFloat(degrees / 180 * Double.pi)
 }

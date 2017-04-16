@@ -5,6 +5,6 @@
   Created by William Miller on 9/5/16.
 
 */
-"rcamera.interrupted.alert.msg" = "Unable to start camera session.";
+"camera.interrupted.alert.msg" = "Unable to start camera session.";
 "camera.interrupted.alert.title" = "Camera";
 "button.ok" = "OK";

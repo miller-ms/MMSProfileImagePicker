@@ -4,8 +4,8 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - MMSCameraViewController (0.2.0)
-  - MMSProfileImagePicker (1.3.0):
+  - MMSCameraViewController (1.0.0)
+  - MMSProfileImagePicker (1.3.1):
     - MMSCameraViewController
 
 DEPENDENCIES:
@@ -18,9 +18,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  MMSCameraViewController: d98e61a902dc12a84860ae348e2b4584ca77ded4
-  MMSProfileImagePicker: 53778319bebc04add1cc6c8d43942a2c41ef4824
+  MMSCameraViewController: 61b2d86f111dc1d2685e0a34659a7f9ed683e1b4
+  MMSProfileImagePicker: ad5be7479d999a4c4f1c6b9cd74542927836ef0b
 
 PODFILE CHECKSUM: 74582b43c31ccceeb4b1b8a75c99cbf4907a227a
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.2.1

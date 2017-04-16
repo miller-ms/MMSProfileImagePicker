@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "59CEBC6E2A94A867B14E93998554A29E"
+               BlueprintIdentifier = "E2E8557A7C72848196AD212C53A569DA"
                BuildableName = "MMSCameraViewController.framework"
                BlueprintName = "MMSCameraViewController"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "59CEBC6E2A94A867B14E93998554A29E"
+            BlueprintIdentifier = "E2E8557A7C72848196AD212C53A569DA"
             BuildableName = "MMSCameraViewController.framework"
             BlueprintName = "MMSCameraViewController"
             ReferencedContainer = "container:Pods.xcodeproj">
