@@ -30,6 +30,27 @@ class CameraView: UIView {
                 
     }
     
+    func disableSnapButton() {
+        guard snapBtn != nil else {
+            return
+        }
+        snapBtn.isEnabled = false
+    }
+    
+    func enableSnapButton() {
+        guard snapBtn != nil else {
+            return
+        }
+        snapBtn.isEnabled = true
+    }
+    
+    func isSnapButtonEnabled() -> Bool {
+        guard snapBtn != nil else {
+            return false
+        }
+        return snapBtn.isEnabled
+    }
+    
     /*
      // Only override drawRect: if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.

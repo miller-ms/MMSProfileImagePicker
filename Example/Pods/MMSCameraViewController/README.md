@@ -1,9 +1,10 @@
 # MMSCameraViewController
 
-[![CI Status](http://img.shields.io/travis/William Miller/MMSCameraViewController.svg?style=flat)](https://travis-ci.org/William Miller/MMSCameraViewController)
+[![CI Status](http://img.shields.io/travis/miller-ms/MMSCameraViewController.svg?style=flat)](https://travis-ci.org/miller-ms/MMSCameraViewController)
 [![Version](https://img.shields.io/cocoapods/v/MMSCameraViewController.svg?style=flat)](http://cocoapods.org/pods/MMSCameraViewController)
 [![License](https://img.shields.io/cocoapods/l/MMSCameraViewController.svg?style=flat)](http://cocoapods.org/pods/MMSCameraViewController)
 [![Platform](https://img.shields.io/cocoapods/p/MMSCameraViewController.svg?style=flat)](http://cocoapods.org/pods/MMSCameraViewController)
+[![CocoaPods](https://img.shields.io/cocoapods/dm/MMSCameraViewController.svg)](http://cocoapods.org/pods/MMSCameraViewController)
 
 This class presents a camera for capturing still images and returning them to the presenting view controller through a callback to the delegate. Unlike many other camera controllers, this one does not provide the functionality for presenting a new view for accepting and cropping the captured image. It leaves that feature for the application to support providing more flexibility and customization by the application.
 
