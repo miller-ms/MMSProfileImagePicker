@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 `MMSProfileImagePicker` adheres to [Semantic Versioning](http://semver.org/).
 
+## [Version 1.5.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.5.0)
+### Released on 2017-11-18
+#### Fixed
+- Upgraded to swift 4.
+- Deployment target is 9.0
+- Fixed by [William Miller](https://github.com/miller-ms).
+
 ## [Version 1.4.1](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.4.1)
 ### Released on 2017-04-16
 #### Fixed

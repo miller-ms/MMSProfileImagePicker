@@ -7,7 +7,6 @@ end
 
 target 'MMSProfileImagePicker_Tests' do
   pod 'MMSProfileImagePicker', :path => '../'
-  pod 'FBSnapshotTestCase'
 end
 
 post_install do |installer|

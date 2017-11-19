@@ -3,7 +3,7 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9.1
 cache: cocoapods
 podfile: example/Podfile
 before_install:
@@ -17,6 +17,6 @@ before_install:
 script:
 - pod spec lint --quick
 - set -o pipefail && xcodebuild -workspace Example/MMSProfileImagePicker.xcworkspace -list | xcpretty;
-# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=10.3.1' | xcpretty;
-# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=10.3.1' | xcpretty;
-- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=10.3.1' | xcpretty;
+# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;
+# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;
+- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;

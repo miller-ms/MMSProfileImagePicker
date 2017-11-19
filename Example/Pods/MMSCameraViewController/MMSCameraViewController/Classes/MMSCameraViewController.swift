@@ -29,7 +29,7 @@ import UIKit
 import AVFoundation
 
 
-open class MMSCameraViewController: UIViewController {
+@objc open class MMSCameraViewController: UIViewController {
     
 // MARK: Properties
     
@@ -37,12 +37,12 @@ open class MMSCameraViewController: UIViewController {
     fileprivate var CaptureStillImageContext = false
     
     /// Application delegate
-    open var delegate: MMSCameraViewDelegate! = nil
+    @objc open var delegate: MMSCameraViewDelegate! = nil
     
     /// Session for capturing still images
     let photoSession:AVCaptureSession = {
         let session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSessionPresetPhoto
+        session.sessionPreset = AVCaptureSession.Preset.photo
         return session
     }()
     
@@ -167,8 +167,8 @@ open class MMSCameraViewController: UIViewController {
         }
 
         // Set the background colors to black and 50% transparent
-        cameraView.bottomBarView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
-        cameraView.topBarView.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        cameraView.bottomBarView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        cameraView.topBarView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
         
     }
     
@@ -205,11 +205,11 @@ open class MMSCameraViewController: UIViewController {
     fileprivate func authorizeCamera() -> Void {
         
         
-        switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
+        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
         case .authorized:
             setupCamera()
         case .notDetermined:
-            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
                 
                 if granted {
                     self.setupCamera()
@@ -230,7 +230,7 @@ open class MMSCameraViewController: UIViewController {
     */
     fileprivate func setupCamera () -> Void {
         
-        activateCameraDevice(findCameraDevice(withPosition: AVCaptureDevicePosition.back))
+        activateCameraDevice(findCameraDevice(withPosition: AVCaptureDevice.Position.back))
         
         DispatchQueue.main.async {
             
@@ -262,16 +262,18 @@ open class MMSCameraViewController: UIViewController {
      
         - Returns: The AVCaptureDevice with input position or nil if non was found
     */
-    fileprivate func findCameraDevice (withPosition position: AVCaptureDevicePosition) -> AVCaptureDevice! {
+    fileprivate func findCameraDevice (withPosition position: AVCaptureDevice.Position) -> AVCaptureDevice! {
         
-        guard let videoDevices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as? [AVCaptureDevice]  else {
-            
-            return nil
-            
+        var videoDevices:[AVCaptureDevice] = AVCaptureDevice.devices(for: .video)
+
+        if #available(iOS 10.2, *) {
+             videoDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera,.builtInTelephotoCamera], mediaType: .video, position: AVCaptureDevice.Position.unspecified).devices
+        } else {
+            // Fallback on earlier versions
+            videoDevices = AVCaptureDevice.devices(for: .video)
         }
         
         return videoDevices.filter{ $0.position == position }.first
-        
     }
     
     /**
@@ -286,7 +288,7 @@ open class MMSCameraViewController: UIViewController {
         
         captureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
-        captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        captureVideoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         captureVideoPreviewLayer.frame = previewView.bounds
         
@@ -445,9 +447,9 @@ open class MMSCameraViewController: UIViewController {
                 
             }
             
-            for port in (connection as! AVCaptureConnection).inputPorts {
-                if (port as! AVCaptureInputPort).mediaType == AVMediaTypeVideo {
-                    videoConnection = connection as! AVCaptureConnection
+            for port in (connection ).inputPorts {
+                if (port ).mediaType == AVMediaType.video {
+                    videoConnection = connection 
                     break connectionloop
                 }
             }
@@ -471,11 +473,11 @@ open class MMSCameraViewController: UIViewController {
         }
         
         // capture the still image currently in the camera's focus
-        stillImageOutput.captureStillImageAsynchronously(from: videoConnection)
+        stillImageOutput.captureStillImageAsynchronously(from: videoConnection!)
         { buffer, error in
                         
             
-            guard buffer != nil, let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer) else {
+            guard buffer != nil, let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer!) else {
                 self.cameraView.enableSnapButton()
                 return
             }
@@ -609,7 +611,7 @@ open class MMSCameraViewController: UIViewController {
     /**
         Enable the camera's UI controls when the session has started.
     */
-    internal func notifySessionStarted(_ notification: Notification) {
+    @objc internal func notifySessionStarted(_ notification: Notification) {
         
         enableControls()
         
@@ -618,7 +620,7 @@ open class MMSCameraViewController: UIViewController {
     /**
         Rotate the camera UI controls when the device orientation has changed.
     */
-    internal func notifyOrientationChanged(_ notification: Notification) {
+    @objc internal func notifyOrientationChanged(_ notification: Notification) {
         
         let currentOrientation = deviceOrientation(lastOrientation)
         
@@ -632,13 +634,13 @@ open class MMSCameraViewController: UIViewController {
     /**
         Give the user the ability to resume the session if it's in use by another client.  Otherwise present an inforational message that the camera is unavailable.
     */
-    internal func notifySessionWasInterrupted(_ notification: Notification) {
+    @objc internal func notifySessionWasInterrupted(_ notification: Notification) {
         
         var showResumeBtn = false
                 
         if #available(iOS 9, *) {
         
-            let reason = AVCaptureSessionInterruptionReason(rawValue: Int((notification as NSNotification).userInfo![AVCaptureSessionInterruptionReasonKey] as! NSNumber))
+            let reason = AVCaptureSession.InterruptionReason(rawValue: (notification.userInfo![AVCaptureSessionInterruptionReasonKey] as! NSNumber ).intValue)
             
             switch reason! {
                 
@@ -675,14 +677,14 @@ open class MMSCameraViewController: UIViewController {
     }
     
     // FIXME:  Need to figure out what to do with a runtime error
-    internal func notifySessionRuntimeError(_ notification: Notification) {
+    @objc internal func notifySessionRuntimeError(_ notification: Notification) {
         
     }
     
     /**
         Hide the resume button or the unavailable notification if they were previously showing.
     */
-    internal func notiySessionInterruptionEnded(_ notification: Notification) {
+    @objc internal func notiySessionInterruptionEnded(_ notification: Notification) {
 
 
     
