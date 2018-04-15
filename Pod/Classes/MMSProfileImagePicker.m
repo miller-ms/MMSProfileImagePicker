@@ -192,12 +192,12 @@ const CGFloat kOverlayInset = 10;
         [super dismissViewControllerAnimated:NO completion:completion];
         
         if (didChooseImage)
-            [camera dismissViewControllerAnimated:NO completion:^{isPresentingCamera = NO; didChooseImage = NO;}];
+        [camera dismissViewControllerAnimated:NO completion:^{self->isPresentingCamera = NO; self->didChooseImage = NO;}];
         
         
     } else if (isDisplayFromPicker) {
         
-        [super dismissViewControllerAnimated:NO completion:^{didChooseImage = NO;}];
+        [super dismissViewControllerAnimated:NO completion:^{self->didChooseImage = NO;}];
         
         [imagePicker dismissViewControllerAnimated:NO completion:nil];
         
@@ -205,7 +205,7 @@ const CGFloat kOverlayInset = 10;
         
     } else {
         
-        [super dismissViewControllerAnimated:flag completion:^{if (completion) completion(); didChooseImage = NO;}];
+        [super dismissViewControllerAnimated:flag completion:^{if (completion) completion(); self->didChooseImage = NO;}];
 
     }
     
