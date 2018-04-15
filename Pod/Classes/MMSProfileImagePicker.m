@@ -352,9 +352,19 @@ const CGFloat kOverlayInset = 10;
     
     /* center the title in the view and position it a short distance from the top
      */
-    [label.centerXAnchor constraintEqualToAnchor:parentView.centerXAnchor].active = YES;
-    
-    [label.topAnchor constraintEqualToAnchor:parentView.topAnchor constant:kTopSpace].active = YES;
+    if (@available(iOS 11.0, *)) {
+        
+        // iPhone X, et al, support using iOS11 Safe Area Layout Guide mechanism.
+        [label.centerXAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.centerXAnchor].active = YES;
+
+        [label.topAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.topAnchor constant:kTopSpace].active = YES;
+    }
+    else {
+        
+        [label.centerXAnchor constraintEqualToAnchor:parentView.centerXAnchor].active = YES;
+        
+        [label.topAnchor constraintEqualToAnchor:parentView.topAnchor constant:kTopSpace].active = YES;
+    }
     
     return label;
 }
@@ -401,10 +411,19 @@ const CGFloat kOverlayInset = 10;
     
     /* ancher the choose button to the bottom right corner of the parent view.
      */
-    
-    [button.topAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:-kChooseBottomSpace].active = YES;
-    
-    [button.rightAnchor constraintEqualToAnchor:parentView.rightAnchor constant:-kChooseRightSpace].active = YES;
+    if (@available(iOS 11.0, *)) {
+        
+        // iPhone X, et al, support using iOS11 Safe Area Layout Guide mechanism.
+        [button.topAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.bottomAnchor constant:-kChooseBottomSpace].active = YES;
+        
+        [button.rightAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.rightAnchor constant:-kChooseRightSpace].active = YES;
+    }
+    else {
+        
+        [button.topAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:-kChooseBottomSpace].active = YES;
+        
+        [button.rightAnchor constraintEqualToAnchor:parentView.rightAnchor constant:-kChooseRightSpace].active = YES;
+    }
     
     return button;
     
@@ -452,11 +471,18 @@ const CGFloat kOverlayInset = 10;
     
     /* ancher the cancel button to the bottom left corner of the parent view.
      */
-    
-    [button.topAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:-kCancelBottomSpace].active = YES;
-    
-    [button.leftAnchor constraintEqualToAnchor:parentView.leftAnchor constant:kCancelLeftSpace].active = YES;
-    
+    if (@available(iOS 11.0, *)) {
+        // iPhone X, et al, support using iOS11 Safe Area Layout Guide mechanism.
+        [button.topAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.bottomAnchor constant:-kCancelBottomSpace].active = YES;
+        
+        [button.leftAnchor constraintEqualToAnchor:parentView.safeAreaLayoutGuide.leftAnchor constant:kCancelLeftSpace].active = YES;
+    }
+    else {
+        [button.topAnchor constraintEqualToAnchor:parentView.bottomAnchor constant:-kCancelBottomSpace].active = YES;
+        
+        [button.leftAnchor constraintEqualToAnchor:parentView.leftAnchor constant:kCancelLeftSpace].active = YES;
+    }
+
     return button;
     
 }
