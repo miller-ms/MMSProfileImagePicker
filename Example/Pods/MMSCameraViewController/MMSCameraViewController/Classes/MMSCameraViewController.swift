@@ -485,25 +485,25 @@ import AVFoundation
             // determine the orientation of the device in order to set the orientation correctly in the UIImage.
             let device = UIDevice.current
             
-            var imageOrientation = UIImageOrientation.up
+            var imageOrientation = UIImage.Orientation.up
             
             switch device.orientation {
                 
             case .portrait:
-                imageOrientation = UIImageOrientation.right
+                imageOrientation = UIImage.Orientation.right
             case .portraitUpsideDown:
-                imageOrientation = UIImageOrientation.left
+                imageOrientation = UIImage.Orientation.left
             case .landscapeLeft:
                 if self.cameraDevice?.position == .back {
-                    imageOrientation = UIImageOrientation.up
+                    imageOrientation = UIImage.Orientation.up
                 } else {
-                    imageOrientation = UIImageOrientation.downMirrored
+                    imageOrientation = UIImage.Orientation.downMirrored
                 }
             case .landscapeRight:
                 if self.cameraDevice?.position == .back {
-                    imageOrientation = UIImageOrientation.down
+                    imageOrientation = UIImage.Orientation.down
                 } else {
-                    imageOrientation = UIImageOrientation.upMirrored
+                    imageOrientation = UIImage.Orientation.upMirrored
                 }
             case .unknown:
                 print("Device orientation has unknown value.")
@@ -513,15 +513,15 @@ import AVFoundation
                 imageOrientation = {
                     switch self.lastOrientation {
                     case .landscapeLeft:
-                        return UIImageOrientation.up
+                        return UIImage.Orientation.up
                     case .landscapeRight:
-                        return UIImageOrientation.down
+                        return UIImage.Orientation.down
                     case .portrait:
-                        return UIImageOrientation.right
+                        return UIImage.Orientation.right
                     case .portraitUpsideDown:
-                        return UIImageOrientation.left
+                        return UIImage.Orientation.left
                     default:
-                        return UIImageOrientation.right
+                        return UIImage.Orientation.right
                     }
                 } ()
             }
@@ -604,7 +604,7 @@ import AVFoundation
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(notifyOrientationChanged),
-            name: NSNotification.Name.UIDeviceOrientationDidChange,
+            name: UIDevice.orientationDidChangeNotification,
             object: nil)
     }
     
