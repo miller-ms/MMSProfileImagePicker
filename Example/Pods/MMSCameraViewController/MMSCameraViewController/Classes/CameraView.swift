@@ -19,38 +19,37 @@ class CameraView: UIView {
     @IBOutlet weak var resumeSessionBtn: UIButton!
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet weak var bottomBarView: UIView!
-    
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-                
+
     }
-    
+
     func disableSnapButton() {
         guard snapBtn != nil else {
             return
         }
         snapBtn.isEnabled = false
     }
-    
+
     func enableSnapButton() {
         guard snapBtn != nil else {
             return
         }
         snapBtn.isEnabled = true
     }
-    
+
     func isSnapButtonEnabled() -> Bool {
         guard snapBtn != nil else {
             return false
         }
         return snapBtn.isEnabled
     }
-    
+
     /*
      // Only override drawRect: if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
@@ -58,6 +57,4 @@ class CameraView: UIView {
      // Drawing code
      }
      */
-    
-    
 }

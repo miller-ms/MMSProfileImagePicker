@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B443D981FC1505A00BB885E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0B443D971FC1505A00BB885E /* Podfile */; };
+		0B7D8BDE2210E3F200DB68EC /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 0B7D8BDD2210E3F200DB68EC /* .swift-version */; };
 		2C866CA71D0E97430085B9B4 /* MMSProfileImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C866CA61D0E97430085B9B4 /* MMSProfileImagePicker.framework */; };
 		2C96579B1C7269750051858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96579A1C7269750051858C /* Main.storyboard */; };
 		2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C96582A1C72DF030051858C /* Launch Screen.storyboard */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B443D971FC1505A00BB885E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0B7D8BDD2210E3F200DB68EC /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
 		0F4ED6F9287570C2B3637EAE /* MMSProfileImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MMSProfileImagePicker.podspec; path = ../MMSProfileImagePicker.podspec; sourceTree = "<group>"; };
 		133ADDF12FE42B739FE77AB1 /* Pods-MMSProfileImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MMSProfileImagePicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2C30B3881C8F8B620070CF5C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				0B443D971FC1505A00BB885E /* Podfile */,
+				0B7D8BDD2210E3F200DB68EC /* .swift-version */,
 				2CD54D3D1D0CA87F007A50F8 /* .gitignore */,
 				2CD54D3E1D0CA87F007A50F8 /* .travis.yml */,
 				2C30B3881C8F8B620070CF5C /* CHANGELOG.md */,
@@ -217,7 +217,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				4E756C09713377C5A1466002 /* [CP] Embed Pods Frameworks */,
-				6BF92C903F392684D141F6BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,7 +236,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				A8FF78B8BCAA0F59E1A88662 /* [CP] Embed Pods Frameworks */,
-				6FF8CE2A1F7320AA01C4F551 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,8 +258,7 @@
 				ORGANIZATIONNAME = "William Miller";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 58WUGF3NUP;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					6003F5AD195388D20070C39A = {
 						DevelopmentTeam = 58WUGF3NUP;
@@ -294,10 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B443D981FC1505A00BB885E /* Podfile in Resources */,
 				2C96579B1C7269750051858C /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				2C96582B1C72DF030051858C /* Launch Screen.storyboard in Resources */,
+				0B7D8BDE2210E3F200DB68EC /* .swift-version in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +316,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MMSCameraViewController/MMSCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/MMSProfileImagePicker/MMSProfileImagePicker.framework",
 			);
@@ -330,37 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6BF92C903F392684D141F6BB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6FF8CE2A1F7320AA01C4F551 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MMSProfileImagePicker_Example/Pods-MMSProfileImagePicker_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7E2F413F17D0807F72520987 /* [CP] Check Pods Manifest.lock */ = {
@@ -387,7 +354,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MMSCameraViewController/MMSCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/MMSProfileImagePicker/MMSProfileImagePicker.framework",
 			);
@@ -398,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MMSProfileImagePicker_Tests/Pods-MMSProfileImagePicker_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C7356898D45E4A860D9DA5D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -562,14 +529,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_CURRENT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMSProfileImagePicker/MMSProfileImagePicker-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"/**";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "MMSProfileImagePicker/MMSProfileImagePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
@@ -590,13 +560,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 58WUGF3NUP;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_CURRENT_VERSION = 15;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/MMSProfileImagePicker\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MMSProfileImagePicker/MMSProfileImagePicker-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "MMSProfileImagePicker/MMSProfileImagePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;

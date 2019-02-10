@@ -24,59 +24,47 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
+// swiftlint:disable line_length
 
 import Foundation
 
-
 extension MMSCameraViewController {
-    
+
     func rotateDegrees(orientation: UIDeviceOrientation) -> Double {
-        
+
         switch orientation {
-            
         case .portrait:
             return 0.0
-            
         case .portraitUpsideDown:
             return 180.0
-            
         case .landscapeRight:
             return -90.0
-            
         case .landscapeLeft:
             return 90.0
-            
         default:
             return 0.0
-            
         }
     }
 
+    func deviceOrientation(_ inOrientation: UIDeviceOrientation) -> UIDeviceOrientation {
 
-    func deviceOrientation(_ inOrientation:UIDeviceOrientation) -> UIDeviceOrientation {
-        
         let statusBarOrientation = UIDevice.current.orientation // UIApplication.sharedApplication().statusBarOrientation
-        
+
         switch statusBarOrientation {
         case .portrait:
             return .portrait
-            
         case .landscapeLeft:
             return .landscapeLeft
-            
         case .landscapeRight:
             return .landscapeRight
-            
         case .portraitUpsideDown:
             return .portraitUpsideDown
-            
         case .faceUp, .faceDown:
             return inOrientation
-            
         default:
             return .portrait
         }
-        
+
     }
 
 }
