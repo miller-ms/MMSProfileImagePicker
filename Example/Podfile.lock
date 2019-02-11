@@ -1,19 +1,23 @@
 PODS:
-  - MMSCameraViewController (1.2.1)
-  - MMSProfileImagePicker (1.5.0):
-    - MMSCameraViewController (~> 1.2.1)
+  - MMSCameraViewController (1.4.0)
+  - MMSProfileImagePicker (1.5.1):
+    - MMSCameraViewController (~> 1.4.0)
 
 DEPENDENCIES:
   - MMSProfileImagePicker (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MMSCameraViewController
+
 EXTERNAL SOURCES:
   MMSProfileImagePicker:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  MMSCameraViewController: 70e128c8398686e323645e032aa8d1ea2b0cb54a
-  MMSProfileImagePicker: c0c15107cbfe6291dcfb5ba1d8b2d0e4ceb9430f
+  MMSCameraViewController: 2f854543eeba7c0f9824249bda47732d8fd51968
+  MMSProfileImagePicker: 1d8e476f18d65db0249917812a8d8a94360e94ef
 
-PODFILE CHECKSUM: a81084da6a95a0e36e5539d13fade2ff969c2285
+PODFILE CHECKSUM: 261da17fc507f500f121769c0ffb7e5909757507
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.0

@@ -3,7 +3,7 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-osx_image: xcode9.1
+osx_image: xcode10.1
 cache: cocoapods
 podfile: example/Podfile
 before_install:
@@ -13,10 +13,9 @@ before_install:
  - sudo gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
  - sudo gem install cocoapods --pre # Since Travis is not always on latest version
 
-
 script:
 - pod spec lint --quick
 - set -o pipefail && xcodebuild -workspace Example/MMSProfileImagePicker.xcworkspace -list | xcpretty;
-# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;
-# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;
-- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker_Example -sdk iphonesimulator PLATFORM_NAME=iphonesimulator ONLY_ACTIVE_ARCH=NO -destination 'platform=ios Simulator,name=iphone 6,OS=11.1' | xcpretty;
+# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Example CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO  | xcpretty;
+# set -o pipefail && xcodebuild clean build -workspace Example/MMSProfileImagePicker.xcworkspace -scheme Pods-MMSProfileImagePicker_Tests -sdk iphonesimulator PLATFORM_NAME=iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO  ONLY_ACTIVE_ARCH=NO  | xcpretty;
+- set -o pipefail && xcodebuild clean test -workspace Example/MMSProfileImagePicker.xcworkspace -scheme MMSProfileImagePicker_Example CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO  | xcpretty;

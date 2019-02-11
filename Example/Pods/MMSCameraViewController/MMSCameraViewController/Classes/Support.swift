@@ -9,10 +9,9 @@
 import Foundation
 
 internal func isDeviceOrientationPortrait() -> Bool {
-    
-    
+
     let orientation = UIDevice.current.orientation
-    
+
     switch orientation {
     case .portrait, .portraitUpsideDown:
         return true
