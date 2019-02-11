@@ -5,14 +5,14 @@ All notable changes to this project will be documented in this file.
 ## [Version 1.6.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.6.0)
 ### Released on 2019-02-10
 #### Fixed
--  Upgrading to swift 4.2
+- Upgrading to swift 4.2
 - Upgrade to MMSCameraViewController 1.4.0
 - Fixed by [William Miller](https://github.com/miller-ms).
 
 ## [Version 1.5.1](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.5.1)
 ### Released on 2017-11-26
 #### Fixed
--  Corrected issue where example image in readme.md does not show on cocoapods.org
+- Corrected issue where example image in readme.md does not show on cocoapods.org
 - Fixed by [William Miller](https://github.com/miller-ms).
 
 ## [Version 1.5.0](https://github.com/miller-ms/MMSProfileImagePicker/releases/tag/1.5.0)
