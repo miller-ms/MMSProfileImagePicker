@@ -25,11 +25,10 @@
 //  THE SOFTWARE.
 
 import Foundation
+import UIKit
 
-@objc public protocol MMSCameraViewDelegate {
-    
-    
-    func cameraDidCaptureStillImage(_ image:UIImage, camera cameraController: MMSCameraViewController)
+@objc public protocol MMSCameraViewDelegate: class {
 
+    func cameraDidCaptureStillImage(_ image: UIImage, camera cameraController: MMSCameraViewController)
 
 }

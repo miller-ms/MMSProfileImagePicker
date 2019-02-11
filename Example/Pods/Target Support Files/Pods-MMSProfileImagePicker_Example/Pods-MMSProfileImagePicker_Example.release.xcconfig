@@ -1,11 +1,11 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/MMSCameraViewController" "$PODS_CONFIGURATION_BUILD_DIR/MMSProfileImagePicker"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MMSCameraViewController" "${PODS_CONFIGURATION_BUILD_DIR}/MMSProfileImagePicker"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/MMSCameraViewController/MMSCameraViewController.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MMSProfileImagePicker/MMSProfileImagePicker.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/MMSCameraViewController/MMSCameraViewController.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/MMSProfileImagePicker/MMSProfileImagePicker.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "MMSCameraViewController" -framework "MMSProfileImagePicker"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
-PODS_BUILD_DIR = $BUILD_DIR
-PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "CoreMedia" -framework "Foundation" -framework "ImageIO" -framework "MMSCameraViewController" -framework "MMSProfileImagePicker" -framework "UIKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
